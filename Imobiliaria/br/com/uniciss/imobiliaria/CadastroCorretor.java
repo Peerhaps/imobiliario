@@ -5,7 +5,9 @@ import java.util.Scanner;
 import br.com.uniciss.imobiliaria.util.ValidadorCpf;
 
 public class CadastroCorretor {
-
+	/*
+	 *LOCAL DE PREENCHIMENTO DE CADASTRO DE CORRETOR
+	 */
 	private static Scanner entrada;
 	private static Scanner entrada2;
 
