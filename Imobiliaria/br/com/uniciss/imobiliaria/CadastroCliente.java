@@ -10,7 +10,7 @@ private static Scanner entrada2;
 public static void main(String[] args) throws IOException{
 	
 	/*
-	 * Area para cadastro de clientes que podem ser:  Locatário, Locador, Proprietario ou Comprador.
+	 * Area para cadastro de clientes que podem ser:  Locatário, Locador, Proprietario ou Comprador..
 	 */
 	
 	Cliente cliente = new Cliente();
