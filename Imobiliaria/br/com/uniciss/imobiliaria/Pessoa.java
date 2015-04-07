@@ -8,7 +8,7 @@ import br.com.uniciss.imobiliaria.util.IO;
 
 public abstract class Pessoa {
 
-	protected JSONObject dados;
+	protected JSONObject dados = new JSONObject();
 	protected String arquivo;
 	
 	/**

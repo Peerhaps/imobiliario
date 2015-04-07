@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class MenuCadastrarCliente {
 	private static Scanner entrada;
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		System.out.println("Menu Cadastro de Clientes:\n" + "1 - Cadastrar\n"
 				+ "2 - Listar\n" + "3 - Alterar\n" + "4 - Excluir\n"
 				+ "5 - Voltar ao menu anterior  ");
@@ -22,6 +22,7 @@ public class MenuCadastrarCliente {
 			switch (opcao){
 			case "1":
 				System.out.println("Cadastrar novo Cliente");
+				CadastroCliente.main();
 				
 			break;
 			
