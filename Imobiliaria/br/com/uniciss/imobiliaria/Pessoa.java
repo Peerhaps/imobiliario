@@ -1,49 +1,61 @@
 package br.com.uniciss.imobiliaria;
-public abstract class Pessoa {
-	protected String nome;
-	protected String cpf;
-	protected String rg;
-	protected String endereco;
-	protected String telefone;
 
+import org.json.JSONObject;
+
+public abstract class Pessoa {
+
+	protected JSONObject dados;
+	
+	/**
+	 * Retorna o nome do cliente.
+	 * @return String - Nome do cliente.
+	 */
 	public String getNome() {
-		return nome;
+		return this.dados.getString("Nome");
 	}
 
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.dados.put("Nome", nome);
 	}
 
+	/**
+	 * Retorna o CPF do cliente.
+	 * @return String - Nome do cliente.
+	 */
 	public String getCpf() {
-		return cpf;
+		return this.dados.getString("CPF");
 	}
 
 	public void setCpf(String cpf) {
-		this.cpf = cpf;
+		this.dados.put("CPF", cpf);
 	}
 
 	public String getRg() {
-		return rg;
+		return this.dados.getString("Nome");
 	}
 
 	public void setRg(String rg) {
-		this.rg = rg;
+		this.dados.put("RG", rg);
 	}
 
 	public String getEndereco() {
-		return endereco;
+		return this.dados.getString("Endereço");
 	}
 
 	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+		this.dados.put("Endereço", endereco);
 	}
 
 	public String getTelefone() {
-		return telefone;
+		return this.dados.getString("Nome");
 	}
 
 	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+		this.dados.put("Telefone", telefone);
 	}
 
+	@Override
+	public String toString() {
+		return this.dados.toString();
+	}
 }
