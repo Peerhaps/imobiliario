@@ -19,7 +19,7 @@ public class MenuImovel {
 			switch (opcao){
 			case "1":
 				System.out.println("\nCadastrar novo Imóvel para Venda\n---------------------------------");
-				CadastraImovel cI=new CadastraImovel();
+				CadastroImovel cI=new CadastroImovel();
 				cI.cadastraImovel();
 			break;
 			

@@ -6,7 +6,7 @@ import java.util.Scanner;
 import br.com.uniciss.imobiliaria.geral.ImovelAluguel;
 import br.com.uniciss.imobiliaria.geral.ImovelVenda;
 
-public class CadastraImovel {   
+public class CadastroImovel {   
 	Scanner ler=new Scanner(System.in);
 	String end;
 	double area;
