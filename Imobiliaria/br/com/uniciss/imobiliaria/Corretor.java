@@ -4,7 +4,7 @@ public class Corretor extends Secretario {
 
 	}
 
-	public void alugar(Locatario locatario, ImovelAluguel imovel) {
+	public void alugar(Cliente locatario, ImovelAluguel imovel) {
 
 	}
 }

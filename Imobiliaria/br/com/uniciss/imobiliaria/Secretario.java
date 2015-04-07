@@ -27,7 +27,7 @@ public class Secretario extends Autenticavel {
 
 	}
 
-	public void receberMensalidade(Locatario locatario) {
+	public void receberMensalidade(Cliente locatario) {
 
 	}
 
