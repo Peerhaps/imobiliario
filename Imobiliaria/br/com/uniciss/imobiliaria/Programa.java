@@ -7,7 +7,7 @@ public class Programa {
 	//Menu Geral Programa
 	public static void main(String[] args) {
 		System.out.println("BEM VINDO AO IMOBILIARIA SOFTWARE");
-		System.out.println("\n ESCOLHA AS OPÇÕES: "
+		System.out.println("\n ESCOLHA AS OPÇÕES:\n"
 				+ "1-MENU SECRETARIO\n"
 				+ "2-MENU CORRETOR\n"
 				+ "3-MENU ADMINISTRADOR\n"
@@ -28,6 +28,7 @@ public class Programa {
 				
 				break;
 			case "4":
+				break;
 			default:
 				System.out.println("OPÇÃO ERRADA!");
 				break;
