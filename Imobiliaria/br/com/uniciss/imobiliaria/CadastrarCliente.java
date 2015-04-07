@@ -1,12 +1,11 @@
 package br.com.uniciss.imobiliaria;
-
 import java.util.Scanner;
 
-public class MenuSecretario {
-private static Scanner entrada;
+public class CadastrarCliente {
+	private static Scanner entrada;
 	
 	public static void main(String[] args) {
-		System.out.println("Menu Cadastro de Secretario:\n" + "1 - Cadastrar\n"
+		System.out.println("Menu Cadastro de Clientes:\n" + "1 - Cadastrar\n"
 				+ "2 - Listar\n" + "3 - Alterar\n" + "4 - Excluir\n"
 				+ "5 - Voltar ao menu anterior  ");
 	
@@ -20,22 +19,22 @@ private static Scanner entrada;
 		do{
 			switch (opcao){
 			case "1":
-				System.out.println("Cadastrar novo Secretario");
+				System.out.println("Cadastrar novo Cliente");
 				
 			break;
 			
 			case "2":
-				System.out.println("Listar Secretario");
+				System.out.println("Listar Cliente");
 				
 			break;
 			
 			case "3":
-				System.out.println("Alterar Secretario");
+				System.out.println("Alterar Cliente");
 				
 			break;
 				
 			case "4":
-				System.out.println("Excluir Secretario");
+				System.out.println("Excluir Cliente");
 				
 				break;
 				
@@ -56,6 +55,3 @@ private static Scanner entrada;
 		
 	}
 }
-
-
-
