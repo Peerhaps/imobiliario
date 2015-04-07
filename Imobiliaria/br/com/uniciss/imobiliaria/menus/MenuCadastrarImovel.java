@@ -2,7 +2,7 @@ package br.com.uniciss.imobiliaria.menus;
 
 import java.util.Scanner;
 
-public class MenuImovel {      
+public class MenuCadastrarImovel {      
 	private static Scanner ler;  
 
 	public static void main(String[] args) {

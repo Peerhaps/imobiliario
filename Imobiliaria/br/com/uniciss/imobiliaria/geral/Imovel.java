@@ -1,7 +1,12 @@
 package br.com.uniciss.imobiliaria.geral;
 import java.util.List;
 
+import org.json.JSONObject;
+
 public class Imovel {
+	
+	protected JSONObject dados = new JSONObject();
+	
 	private String endereco;
 	private double area;   
 	private String tipo;
