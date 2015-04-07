@@ -7,7 +7,7 @@ public class CadastroCliente {
 private static Scanner entrada;
 private static Scanner entrada2;
 
-public static void main(String[] args) throws IOException{
+public static void main(String[] args) throws Exception{
 	
 	/*
 	 * Area para cadastro de clientes que podem ser:  Locatário, Locador, Proprietario ou Comprador..
@@ -59,6 +59,8 @@ public static void main(String[] args) throws IOException{
 				System.out.println("OPCAO ERRADA!");
 				break;
 			}
+			
+			cliente.salvar();
 
 
 

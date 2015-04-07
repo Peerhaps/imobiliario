@@ -14,21 +14,50 @@ public class Cliente extends Pessoa {
 	/**
 	 * Edita o número da conta bancária de cliente.
 	 * 
-	 * @param int - Novo número da conta.
+	 * @param numeroContaBancaria
+	 *            int - Novo número da conta.
 	 */
 	public void setNumeroContaBancaria(int numeroContaBancaria) {
 		this.dados.put("Número da Conta bancária", numeroContaBancaria);
 	}
 
 	/**
-	 * Função do cliente. Pode ser: Locatário, Locador, Proprietário e Locador.
-	 * @return String
+	 * Obter a função do cliente. Pode ser: Locatário, Locador, Proprietário e
+	 * Locador.
+	 * 
+	 * @return String - tipo de cliente. TODO mudar tipo para enum.
 	 */
 	public String getTipoCliente() {
 		return this.dados.getString("Tipo");
 	}
 
-	public void setTipo(String tipo) {
+	/**
+	 * Alterar a função do cliente. Pode ser: Locatário, Locador, Proprietário e
+	 * Comprador.
+	 * 
+	 * @param tipo
+	 *            String - tipo de cliente. TODO mudar tipo para enum.
+	 * @throws Exception
+	 */
+	public void setTipo(String tipo) throws Exception {
+
+		switch (tipo.toLowerCase()) {
+		case "locatário":
+			this.arquivo = "locatarios.json";
+			break;
+		case "pocador":
+			this.arquivo = "locadores.json";
+			break;
+		case "proprietário":
+			this.arquivo = "proprietarios.json";
+			break;
+		case "comprador":
+			this.arquivo = "locadores.json";
+			break;
+		default:
+			throw new Exception("Tipo incorreto.");
+		}
+
 		this.dados.put("Tipo", tipo);
 	}
 

@@ -1,10 +1,15 @@
 package br.com.uniciss.imobiliaria;
 
+import java.io.IOException;
+
 import org.json.JSONObject;
+
+import br.com.uniciss.imobiliaria.util.IO;
 
 public abstract class Pessoa {
 
 	protected JSONObject dados;
+	protected String arquivo;
 	
 	/**
 	 * Retorna o nome do cliente.
@@ -57,5 +62,21 @@ public abstract class Pessoa {
 	@Override
 	public String toString() {
 		return this.dados.toString();
+	}
+	
+	/*
+	 * 
+	 */
+	public boolean salvar() {
+		try {
+			String conteudo = IO.getConteudoDoArquivo(this.arquivo);
+			JSONObject registros = new JSONObject(conteudo);
+			
+			registros.put(this.getNome(), this.dados);
+			
+			return true;
+		} catch(IOException e) {
+			return false;
+		}
 	}
 }
