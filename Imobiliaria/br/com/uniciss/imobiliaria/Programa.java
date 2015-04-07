@@ -3,9 +3,13 @@ package br.com.uniciss.imobiliaria;
 
 import java.util.Scanner;
 
+import br.com.uniciss.imobiliaria.menus.AreaCorretor;
+import br.com.uniciss.imobiliaria.menus.AreaSecretario;
+import br.com.uniciss.imobiliaria.menus.MenuAdministrador;
+
 public class Programa {
 	//Menu Geral Programa
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		System.out.println("BEM VINDO AO IMOBILIARIA SOFTWARE");
 		System.out.println("\n ESCOLHA AS OPÇÕES:\n"
 				+ "1-MENU SECRETARIO\n"
@@ -19,13 +23,13 @@ public class Programa {
 		do{
 			switch (option) {
 			case "1":
-				
+				AreaSecretario.areaSecretario();
 				break;
 			case "2":
-				
+				AreaCorretor.areaCorretor();
 				break;
 			case "3":
-				
+				MenuAdministrador.main(null);
 				break;
 			case "4":
 				break;
