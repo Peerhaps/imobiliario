@@ -1,6 +1,23 @@
 import java.util.Date;
 
 public class Visita {
-	public Date data;
-	public Cliente cliente;
+	private Date data;
+	private Cliente cliente;
+
+	public Date getData() {
+		return data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
 }
