@@ -26,8 +26,10 @@ public class CadastroCliente {
 		entrada2 = new Scanner(System.in);
 
 		String cpf = entrada2.nextLine();
-		while (!ValidadorCpf.validaCpf(cpf))
+		while (!ValidadorCpf.validaCpf(cpf)) {
+			System.out.println("CPF inválido, informe novamente: ");
 			cpf = entrada2.nextLine();
+		}
 
 		cliente.setCpf(cpf);
 
