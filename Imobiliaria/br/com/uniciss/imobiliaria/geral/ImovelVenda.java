@@ -1,14 +1,17 @@
 package br.com.uniciss.imobiliaria.geral;
+
 public class ImovelVenda extends Imovel {
-	private double preco;
+	
+	public ImovelVenda() {
+		//this.arquivo = "imoveis_venda.json"
+	}
 
 	public double getPreco() {
-		return preco;
+		return this.dados.getDouble("Preço");
 	}
 
 	public void setPreco(double preco) {
-		this.preco = preco;
+		this.dados.put("Preço", preco);
 	}
-	
-	
+
 }
