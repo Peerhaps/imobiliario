@@ -3,7 +3,7 @@ package br.com.uniciss.imobiliaria.menus;
 import java.util.Scanner;
 
 public class MenuCadastrarImovel {      
-	private static Scanner ler;  
+	private static Scanner ler;
 
 	public static void main(String[] args) {
 		System.out.println("Menu Cadastro de Imovel:\n" + "1 - Cadastrar Imóvel \n"
