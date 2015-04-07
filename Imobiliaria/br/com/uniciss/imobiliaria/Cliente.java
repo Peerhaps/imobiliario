@@ -42,23 +42,27 @@ public class Cliente extends Pessoa {
 	public void setTipo(String tipo) throws Exception {
 
 		switch (tipo.toLowerCase()) {
-		case "locatário":
-			this.arquivo = "locatarios.json";
+		case "locatario":
+			this.arquivo = "locatorios.json";
 			break;
-		case "pocador":
-			this.arquivo = "locadores.json";
+		case "locator":
+			this.arquivo = "locatores.json";
 			break;
-		case "proprietário":
+		case "proprietario":
 			this.arquivo = "proprietarios.json";
 			break;
 		case "comprador":
-			this.arquivo = "locadores.json";
+			this.arquivo = "compradores.json";
 			break;
 		default:
 			throw new Exception("Tipo incorreto.");
 		}
 
 		this.dados.put("Tipo", tipo);
+	}
+
+	public static void main(String[] args) {
+		System.out.println("Determine o CPF do Cliente: ");
 	}
 
 }
