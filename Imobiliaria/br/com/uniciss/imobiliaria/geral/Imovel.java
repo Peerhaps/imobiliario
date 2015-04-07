@@ -1,101 +1,90 @@
 package br.com.uniciss.imobiliaria.geral;
-import java.util.List;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class Imovel {
-	
+
 	protected JSONObject dados = new JSONObject();
-	
-	private String endereco;
-	private double area;   
-	private String tipo;
-	private int numeroDeQuartos;    
-	private int numeroDeBanheiros;
-	private boolean temGaragem;
-	private String contrato;
-	private boolean ocupado;   
-	private List<Visita> visitasAgendadas;
-	private boolean vendaEAluguel;
 
 	public String getEndereco() {
-		return endereco;
+		return this.dados.getString("Endereço");
 	}
 
 	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+		this.dados.put("Endereço", endereco);
 	}
 
 	public double getArea() {
-		return area;
+		return this.dados.getDouble("Área");
 	}
 
 	public void setArea(double area) {
-		this.area = area;
+		this.dados.put("Área", area);
 	}
 
 	public String getTipo() {
-		return tipo;
+		return this.dados.getString("Tipo");
 	}
 
 	public void setTipo(String tipo) {
-		this.tipo = tipo;
+		this.dados.put("Tipo", tipo);
 	}
 
 	public int getNumeroDeQuartos() {
-		return numeroDeQuartos;
+		return this.dados.getInt("Número de quartos");
 	}
 
 	public void setNumeroDeQuartos(int numeroDeQuartos) {
-		this.numeroDeQuartos = numeroDeQuartos;
+		this.dados.put("Número de quartos", numeroDeQuartos);
 	}
 
 	public int getNumeroDeBanheiros() {
-		return numeroDeBanheiros;
+		return this.dados.getInt("Número de banheiros");
 	}
 
 	public void setNumeroDeBanheiros(int numeroDeBanheiros) {
-		this.numeroDeBanheiros = numeroDeBanheiros;
+		this.dados.put("Número de banheiros", numeroDeBanheiros);
 	}
 
 	public boolean isTemGaragem() {
-		return temGaragem;
+		return this.dados.getBoolean("Tem garagem");
 	}
 
 	public void setTemGaragem(boolean temGaragem) {
-		this.temGaragem = temGaragem;
+		this.dados.put("Tem garagem", temGaragem);
 	}
 
 	public String getContrato() {
-		return contrato;
+		return this.dados.getString("Contrato");
 	}
 
 	public void setContrato(String contrato) {
-		this.contrato = contrato;
+		this.dados.put("Contrato", contrato);
 	}
 
 	public boolean getOcupado() {
-		return ocupado;
+		return this.dados.getBoolean("Ocupado");
 	}
 
 	public void setOcupado(boolean ocupado) {
-		this.ocupado = ocupado;
+		this.dados.put("Ocupado", ocupado);
 	}
 
-	public List<Visita> getVisitasAgendadas() {
-		return visitasAgendadas;
+	public JSONArray getVisitasAgendadas() {
+		return this.dados.getJSONArray("Visitas agendadas");
 	}
 
-	public void setVisitasAgendadas(List<Visita> visitasAgendadas) {
-		this.visitasAgendadas = visitasAgendadas;
+	public void setVisitasAgendadas(JSONArray visitasAgendadas) {
+		this.dados.put("Venda e aluguel", visitasAgendadas);
 	}
 
 	public boolean isVendaEAluguel() {
-		return vendaEAluguel;
+		return this.dados.getBoolean("Venda e aluguel");
 	}
 
 	public void setVendaEAluguel(boolean vendaEAluguel) {
-		this.vendaEAluguel = vendaEAluguel;
+		this.dados.put("Venda e aluguel", vendaEAluguel);
 	}
 
 }
