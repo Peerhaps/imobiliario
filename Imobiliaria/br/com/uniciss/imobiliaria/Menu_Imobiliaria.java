@@ -29,7 +29,7 @@ public class Menu_Imobiliaria {
 			
 			
 			
-		}while(!option.equals("7"))
+		}while(!option.equals("7"));
 		
 	}
 
