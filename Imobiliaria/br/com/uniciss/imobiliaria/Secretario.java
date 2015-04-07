@@ -1,14 +1,19 @@
 package br.com.uniciss.imobiliaria;
 public class Secretario extends Autenticavel {
+		
 	private String horaDeEntrada;
 	private String horaDeSaida;
+	
+	public Secretario() {
+		this.arquivo = "secretarios.json";
+	}
 
 	public String getHoraDeEntrada() {
 		return horaDeEntrada;
 	}
 
 	public void setHoraDeEntrada(String horaDeEntrada) {
-		this.horaDeEntrada = horaDeEntrada;
+		this.dados.put("Hora de entrada", horaDeEntrada);
 	}
 
 	public String getHoraDeSaida() {
@@ -16,7 +21,7 @@ public class Secretario extends Autenticavel {
 	}
 
 	public void setHoraDeSaida(String horaDeSaida) {
-		this.horaDeSaida = horaDeSaida;
+		this.dados.put("Hora de saida", horaDeSaida);
 	}
 
 	public void cadastrarCliente(Cliente cliente) {

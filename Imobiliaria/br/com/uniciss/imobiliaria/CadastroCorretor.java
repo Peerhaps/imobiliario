@@ -4,46 +4,46 @@ import java.util.Scanner;
 
 import br.com.uniciss.imobiliaria.util.ValidadorCpf;
 
-public class CadastroSecretario {
+public class CadastroCorretor {
 	/*
-	 * LOCAL DE PREENCHIMENTO DE CADASTRO DE SECRETARIO;
+	 *LOCAL DE PREENCHIMENTO DE CADASTRO DE CORRETOR
 	 */
 	private static Scanner entrada;
 	private static Scanner entrada2;
 
 	public static void main(String[] args) {
-		System.out.println("Cadastro Secretario\n");
-		Secretario secretario = new Secretario();
 		entrada = new Scanner(System.in);
 		entrada2 = new Scanner(System.in);
-
+		Corretor corretor = new Corretor();
+		
+		
 		System.out.println("Determine o nome: ");
-		secretario.setNome(entrada.nextLine());
-
-		System.out.println("Determine CPF:  ");
+		corretor.setNome(entrada.nextLine());
+		
+		System.out.println("Determine CPF: ");
 		String cpf = entrada2.nextLine();
 		while (!ValidadorCpf.validaCpf(cpf)) {
 			System.out.println("CPF inválido, informe novamente: ");
 			cpf = entrada2.nextLine();
 		}
 
-
-		System.out.println("Determine o RG: ");
-		secretario.setRg(entrada.nextLine());
-
-		System.out.println("Determine o Telefone: ");
-		secretario.setTelefone(entrada2.nextLine());
-
-		System.out.println("Determine o endereco: ");
-		secretario.setEndereco(entrada.nextLine());
-
-		System.out.println("Determine a Hora de Entrada: ");
-		secretario.setHoraDeEntrada(entrada2.nextLine());
-
-		System.out.println("Determine a Hora de Saída: ");
-		secretario.setHoraDeSaida(entrada.nextLine());
 		
-		secretario.salvar();
-
+		System.out.println("Determine o RG: ");
+		corretor.setRg(entrada.nextLine());
+		
+		System.out.println("Determine o Telefone: ");
+		corretor.setTelefone(entrada2.nextLine());
+		
+		System.out.println("Determine o endereco: ");
+		corretor.setEndereco(entrada.nextLine());
+		
+		System.out.println("Determine a Hora de Entrada: ");
+		corretor.setHoraDeEntrada(entrada2.nextLine());
+		
+		System.out.println("Determine a Hora de Saída: ");
+		corretor.setHoraDeSaida(entrada.nextLine());
+		
+		
 	}
+
 }
