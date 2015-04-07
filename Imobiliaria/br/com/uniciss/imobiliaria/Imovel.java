@@ -9,7 +9,7 @@ public class Imovel {
 	private int numeroDeBanheiros;
 	private boolean temGaragem;
 	private String contrato;
-	private boolean ocupado;
+	private boolean ocupado;   
 	private List<Visita> visitasAgendadas;
 	private boolean vendaEAluguel;
 

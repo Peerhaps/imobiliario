@@ -8,7 +8,7 @@ public class CadastraImovel {
 	String end;
 	double area;
 	String tipo;
-	int numQ;
+	int numQ;  
 	int numB;
 	boolean possuiGaragem;
 	String contrato;
