@@ -9,7 +9,7 @@ public class Imovel {
 	private int numeroDeBanheiros;
 	private boolean temGaragem;
 	private String contrato;
-	private String estado;
+	private boolean ocupado;
 	private List<Visita> visitasAgendadas;
 	private boolean vendaEAluguel;
 
@@ -69,12 +69,12 @@ public class Imovel {
 		this.contrato = contrato;
 	}
 
-	public String getEstado() {
-		return estado;
+	public boolean getOcupado() {
+		return ocupado;
 	}
 
-	public void setEstado(String estado) {
-		this.estado = estado;
+	public void setOcupado(boolean ocupado) {
+		this.ocupado = ocupado;
 	}
 
 	public List<Visita> getVisitasAgendadas() {
