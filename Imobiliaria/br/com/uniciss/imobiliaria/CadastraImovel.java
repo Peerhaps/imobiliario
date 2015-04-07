@@ -3,7 +3,7 @@ package br.com.uniciss.imobiliaria;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class CadastraImovel {
+public class CadastraImovel {   
 	Scanner ler=new Scanner(System.in);
 	String end;
 	double area;

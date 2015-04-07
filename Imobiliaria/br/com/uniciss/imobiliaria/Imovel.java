@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Imovel {
 	private String endereco;
-	private double area;
+	private double area;   
 	private String tipo;
 	private int numeroDeQuartos;
 	private int numeroDeBanheiros;
