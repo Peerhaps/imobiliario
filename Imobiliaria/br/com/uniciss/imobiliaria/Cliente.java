@@ -22,6 +22,7 @@ public class Cliente extends Pessoa {
 
 	/**
 	 * Função do cliente. Pode ser: Locatário, Locador, Proprietário e Locador.
+	 * @return String
 	 */
 	public String getTipoCliente() {
 		return this.dados.getString("Tipo");
