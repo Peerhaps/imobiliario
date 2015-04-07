@@ -1,6 +1,6 @@
 package br.com.uniciss.imobiliaria;
 import java.util.Scanner;
-public class CadastrarCorretor {
+public class MenuCadastrarCorretor {
 
 	private static Scanner entrada;
 		
