@@ -1,4 +1,4 @@
-package br.com.uniciss.imobiliaria;
+package br.com.uniciss.imobiliaria.menus;
 import java.util.Scanner;
 public class MenuCadastrarCorretor {
 

@@ -1,4 +1,4 @@
-package br.com.uniciss.imobiliaria;
+package br.com.uniciss.imobiliaria.geral;
 public class Secretario extends Autenticavel {
 		
 	private String horaDeEntrada;

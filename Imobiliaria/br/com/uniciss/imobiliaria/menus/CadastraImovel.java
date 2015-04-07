@@ -1,7 +1,10 @@
-package br.com.uniciss.imobiliaria;
+package br.com.uniciss.imobiliaria.menus;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import br.com.uniciss.imobiliaria.geral.ImovelAluguel;
+import br.com.uniciss.imobiliaria.geral.ImovelVenda;
 
 public class CadastraImovel {   
 	Scanner ler=new Scanner(System.in);

@@ -1,4 +1,4 @@
-package br.com.uniciss.imobiliaria;
+package br.com.uniciss.imobiliaria.geral;
 
 public class Cliente extends Pessoa {
 

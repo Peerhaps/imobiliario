@@ -1,4 +1,4 @@
-package br.com.uniciss.imobiliaria;
+package br.com.uniciss.imobiliaria.geral;
 public class Corretor extends Secretario {
 	public void vender(ImovelVenda imovel, Cliente comprador) {
 

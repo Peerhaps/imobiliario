@@ -1,7 +1,8 @@
-package br.com.uniciss.imobiliaria;
+package br.com.uniciss.imobiliaria.menus;
 
 import java.util.Scanner;
 
+import br.com.uniciss.imobiliaria.geral.Cliente;
 import br.com.uniciss.imobiliaria.util.ValidadorCpf;
 
 public class CadastroCliente {

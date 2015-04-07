@@ -1,26 +1,29 @@
-package br.com.uniciss.imobiliaria;
-
+package br.com.uniciss.imobiliaria.menus;
 import java.util.Scanner;
 
-public class MenuImovel {      
-	private static Scanner ler;  
-
-	public static void main(String[] args) {
-		System.out.println("Menu Cadastro de Imovel:\n" + "1 - Cadastrar Imóvel \n"
+public class MenuCadastrarCliente {
+	private static Scanner entrada;
+	
+	public static void main(String[] args) throws Exception {
+		System.out.println("Menu Cadastro de Clientes:\n" + "1 - Cadastrar\n"
 				+ "2 - Listar\n" + "3 - Alterar\n" + "4 - Excluir\n"
 				+ "5 - Voltar ao menu anterior  ");
-		
+	
+
 		String opcao="";
+		entrada = new Scanner(System.in);
+		opcao=entrada.nextLine();
 		
-		ler = new Scanner(System.in);
-		opcao=ler.nextLine();
-		
+		/*
+		 * Menu para cadastrar, listar, alterar e excluir cliente
+		 * Secretario e Corretor tem acesso ao mesmo
+		*/
 		do{
 			switch (opcao){
 			case "1":
-				System.out.println("\nCadastrar novo Imóvel para Venda\n---------------------------------");
-				CadastraImovel cI=new CadastraImovel();
-				cI.cadastraImovel();
+				System.out.println("Cadastrar novo Cliente");
+				CadastroCliente.main();
+				
 			break;
 			
 			case "2":
@@ -47,9 +50,11 @@ public class MenuImovel {
 			
 			}
 			opcao="0";
-			opcao=ler.nextLine();
+			opcao=entrada.nextLine();
 		}while(!opcao.equals("5"));
 		
+		
+		
+		
 	}
-
 }

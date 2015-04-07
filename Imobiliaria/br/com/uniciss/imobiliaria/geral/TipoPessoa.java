@@ -1,4 +1,4 @@
-package br.com.uniciss.imobiliaria;
+package br.com.uniciss.imobiliaria.geral;
 
 public enum TipoPessoa {
 	LOCATOR(0), LOCATARIO(1), PROPRIETARIO(2), COMPRADOR(3);

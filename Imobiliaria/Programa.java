@@ -1,8 +1,8 @@
-package br.com.uniciss.imobiliaria;
+
 
 import java.util.Scanner;
 
-public class Menu_Imobiliaria {
+public class Programa {
 	//Menu Geral Programa
 	public static void main(String[] args) {
 		System.out.println("BEM VINDO AO IMOBILIARIA SOFTWARE");
