@@ -2,7 +2,7 @@ package br.com.uniciss.imobiliaria.menus;
 
 import java.util.Scanner;
 
-public class AreaCorretor {
+public class AreaCorretor {  
 	public static void areaCorretor() {
 		System.out.println("BEM VINDO A ÁREA DO CORRETOR");
 		System.out.println("\n ESCOLHA AS OPÇÕES: "
