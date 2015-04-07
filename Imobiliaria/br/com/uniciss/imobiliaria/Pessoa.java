@@ -74,6 +74,8 @@ public abstract class Pessoa {
 			
 			registros.put(this.getNome(), this.dados);
 			
+			IO.setConteudoDoArquivo(this.arquivo, registros.toString());
+			
 			return true;
 		} catch(IOException e) {
 			return false;

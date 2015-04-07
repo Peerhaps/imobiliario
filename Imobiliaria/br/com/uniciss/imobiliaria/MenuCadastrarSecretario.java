@@ -21,7 +21,7 @@ private static Scanner entrada;
 			switch (opcao){
 			case "1":
 				System.out.println("Cadastrar novo Secretario");
-				
+				CadastroSecretario.main(null);
 			break;
 			
 			case "2":
