@@ -13,7 +13,9 @@ public class AreaCorretor {
 				+ "6-Vender Imóvel\n"
 				+ "7-Alugar Imóvel\n"
 				+ "8-Sair");
-		//Switch com as opcoes de menu;
+		/**
+		 * Switch com as opcoes de menu;
+		 */
 		Scanner entrada = new Scanner(System.in);
 	
 		String option = entrada.nextLine();

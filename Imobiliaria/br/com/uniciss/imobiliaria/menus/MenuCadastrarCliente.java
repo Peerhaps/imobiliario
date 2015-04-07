@@ -14,7 +14,7 @@ public class MenuCadastrarCliente {
 		entrada = new Scanner(System.in);
 		opcao=entrada.nextLine();
 		
-		/*
+		/**
 		 * Menu para cadastrar, listar, alterar e excluir cliente
 		 * Secretario e Corretor tem acesso ao mesmo
 		*/
