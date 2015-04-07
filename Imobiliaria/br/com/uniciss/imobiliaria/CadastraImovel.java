@@ -7,7 +7,7 @@ public class CadastraImovel {
 	Scanner ler=new Scanner(System.in);
 	String end;
 	double area;
-	String tipo;
+	String tipo;   
 	int numQ;  
 	int numB;
 	boolean possuiGaragem;

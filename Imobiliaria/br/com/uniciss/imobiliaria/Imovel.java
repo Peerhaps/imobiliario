@@ -5,7 +5,7 @@ public class Imovel {
 	private String endereco;
 	private double area;   
 	private String tipo;
-	private int numeroDeQuartos;
+	private int numeroDeQuartos;    
 	private int numeroDeBanheiros;
 	private boolean temGaragem;
 	private String contrato;
