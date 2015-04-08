@@ -33,7 +33,7 @@ public class MenuCadastrarCliente {
 			
 			case "3":
 				System.out.println("Alterar Cliente");
-				EditarCliente.editarCliente();
+				EditarListarCliente.editarCliente();
 			break;
 				
 			case "4":

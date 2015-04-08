@@ -6,15 +6,19 @@ import java.util.Scanner;
 import br.com.uniciss.imobiliaria.geral.Cliente;
 import br.com.uniciss.imobiliaria.util.ValidadorCpf;
 
-public class EditarCliente {
-
+public class EditarListarCliente {
+	/**
+	 * Classe para editar clientes 
+	 */
 	private static Scanner entrada;
 	private static Scanner entrada2;
 
+	/**
+	 * Metodo editarCliente, feito para editar clientes pelo nome 
+	 * @throws IOException
+	 */
 	public static void editarCliente() throws IOException{
-		/*
-		 * Classe para editar clientes 
-		 */
+		
 		System.out.println("Determine o nome do Cliente: ");
 	    
 		Cliente cliente = new Cliente();
@@ -49,12 +53,13 @@ public class EditarCliente {
 
 		cliente.salvar();
 
+	}
+	public static void listarCliente() throws IOException{
+	
+		
 		
 		
 		
 	}
-	
-	
-	
 	
 }
