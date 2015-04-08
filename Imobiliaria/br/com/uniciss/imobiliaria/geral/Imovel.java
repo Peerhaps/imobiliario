@@ -6,19 +6,38 @@ import org.json.JSONObject;
 public class Imovel {
 
 	protected JSONObject dados = new JSONObject();
-
+	
+	/**
+	 * Retorna o endereço do imóvel.
+	 * 
+	 * @return String - Endereço do imóvel.
+	 */
 	public String getEndereco() {
 		return this.dados.getString("Endereço");
 	}
 
+	/**
+	 * Edita o endereço do imóvel
+	 * 
+	 * @param endereco
+	 *            String - Novo endereço.
+	 */
 	public void setEndereco(String endereco) {
 		this.dados.put("Endereço", endereco);
 	}
-
+	
+	/***
+	 * Retorna a área total do imóvel.
+	 * @return double área do imóvel
+	 */
 	public double getArea() {
 		return this.dados.getDouble("Área");
 	}
 
+	/***
+	 * Editar área do imóvel.
+	 * @param area area Área do imóvel
+	 */
 	public void setArea(double area) {
 		this.dados.put("Área", area);
 	}
