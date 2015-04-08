@@ -4,8 +4,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class Imovel extends Dado {
-
-	protected JSONObject dados = new JSONObject();
 	
 	/**
 	 * Retorna o endereço do imóvel.

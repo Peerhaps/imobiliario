@@ -5,7 +5,7 @@ public class Secretario extends Autenticavel {
 	private String horaDeSaida;
 	
 	public Secretario() {
-		this.arquivo = "secretarios.json";
+		this.arquivo = "secretarios.txt";
 	}
 
 	public String getHoraDeEntrada() {

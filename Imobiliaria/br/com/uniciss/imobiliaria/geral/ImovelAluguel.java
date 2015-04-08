@@ -3,7 +3,7 @@ package br.com.uniciss.imobiliaria.geral;
 public class ImovelAluguel extends Imovel {
 	
 	public ImovelAluguel() {
-		this.arquivo = "alugeis.json";
+		this.arquivo = "imoveis_aluguel.txt";
 	}
 
 	public double getMensalidade() {

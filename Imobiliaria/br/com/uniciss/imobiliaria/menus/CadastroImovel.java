@@ -17,11 +17,15 @@ public class CadastroImovel {
 	String contrato;
 	double preco;
 	double mensalidade;
+	String nome;
 	
 	/*
 	 * Metodo que efetua o cadastro de um novo imovel
 	 */
 	public void cadastraImovel(){
+		
+		System.out.println("Nome do Imóvel");
+		nome = ler.nextLine();
 		
 		System.out.println("Endereço do Imóvel");
 		end = ler.nextLine();
@@ -107,6 +111,7 @@ public class CadastroImovel {
 					iV.setContrato(contrato);//Contrato
 					iV.setOcupado(false);//Ocupado
 					iV.setPreco(preco);//Preço
+					iV.setNome(nome);
 					iV.salvar();
 					
 					repete=false;
@@ -140,6 +145,7 @@ public class CadastroImovel {
 					iA.setContrato(contrato);//Contrato
 					iA.setOcupado(false);//Ocupado
 					iA.setMensalidade(mensalidade);
+					iA.setNome(nome);
 					iA.salvar();
 					
 					repete=false;

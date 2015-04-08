@@ -54,7 +54,7 @@ public class CadastroCliente {
 		option = entrada.nextInt();
 		switch (option) {
 		case 1:
-			cliente.setTipo("Locator");
+			cliente.setTipo("Locator"); 
 			break;
 		case 2:
 			cliente.setTipo("Locatario");
