@@ -2,10 +2,6 @@ package br.com.uniciss.imobiliaria.geral;
 
 public class ImovelAluguel extends Imovel {
 	
-	public ImovelAluguel() {
-		this.arquivo = "imoveis_aluguel.txt";
-	}
-
 	public double getMensalidade() {
 		return this.dados.getDouble("Mensalidade");
 	}

@@ -7,6 +7,9 @@ public class Imovel extends Dado {
 	
 	//public Cliente proprietario
 	
+	public Imovel() {
+		this.arquivo = "imoveis.txt";
+	}
 	
 	/**
 	 * Retorna o endereço do imóvel.
@@ -99,12 +102,20 @@ public class Imovel extends Dado {
 		this.dados.put("Venda e aluguel", visitasAgendadas);
 	}
 
-	public boolean isVendaEAluguel() {
-		return this.dados.getBoolean("Venda e aluguel");
+	public boolean aVenda() {
+		return this.dados.getBoolean("A venda");
 	}
 
-	public void setVendaEAluguel(boolean vendaEAluguel) {
-		this.dados.put("Venda e aluguel", vendaEAluguel);
+	public void setAVenda(boolean aVenda) {
+		this.dados.put("A venda", aVenda);
+	}
+	
+	public boolean aLocacao() {
+		return this.dados.getBoolean("A locação");
+	}
+
+	public void setALocacao(boolean aLocacao) {
+		this.dados.put("A locação", aLocacao);
 	}
 
 }
