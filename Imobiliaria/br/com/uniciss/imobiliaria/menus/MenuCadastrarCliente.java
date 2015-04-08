@@ -1,4 +1,5 @@
 package br.com.uniciss.imobiliaria.menus;
+import java.util.List;
 import java.util.Scanner;
 
 import br.com.uniciss.imobiliaria.geral.Cliente;
@@ -30,8 +31,13 @@ public class MenuCadastrarCliente {
 			
 			case "2":
 				System.out.println("Listar Cliente");
-				Cliente.listarClientes();
+				
+				List<String>clientes=Cliente.listarClientes();
+				for(String c : clientes){
+					System.out.println(c);
+				}
 			break;
+			
 			
 			case "3":
 				System.out.println("Alterar Cliente");

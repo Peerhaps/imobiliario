@@ -31,7 +31,6 @@ private static Scanner entrada;
 			
 			case "3":
 				System.out.println("Sair");
-				
 		
 				
 			default:
