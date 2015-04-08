@@ -1,1 +1,0 @@
-{"nome imovel":{"Endereço":"endereco imovel","Tipo":"tipo imovel","Preço":3,"Ocupado":false,"Contrato":"asdasdsad","Área":11,"Número de quartos":2,"Tem garagem":true,"Nome":"nome imovel","Número de banheiros":3}}

@@ -40,7 +40,8 @@ public class Cliente extends Pessoa {
 	 * @throws Exception - Não é nenhum dos tipos definidos.
 	 */
 	public void setTipo(String tipo) throws Exception {
-
+		this.arquivo = "clientes.txt";
+/*
 		switch (tipo.toLowerCase()) {
 		case "locatario":
 			this.arquivo = "locatorios.json";
@@ -57,7 +58,7 @@ public class Cliente extends Pessoa {
 		default:
 			throw new Exception("Tipo incorreto.");
 		}
-
+*/
 		this.dados.put("Tipo", tipo);
 	}
 }

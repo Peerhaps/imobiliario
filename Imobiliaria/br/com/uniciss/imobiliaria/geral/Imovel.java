@@ -5,6 +5,9 @@ import org.json.JSONObject;
 
 public class Imovel extends Dado {
 	
+	//public Cliente proprietario
+	
+	
 	/**
 	 * Retorna o endereço do imóvel.
 	 * 
