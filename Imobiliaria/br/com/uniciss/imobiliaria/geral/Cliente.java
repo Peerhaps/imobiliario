@@ -1,6 +1,13 @@
 package br.com.uniciss.imobiliaria.geral;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+
+import org.json.JSONObject;
+
+import br.com.uniciss.imobiliaria.util.IO;
 
 public class Cliente extends Pessoa {
 
@@ -11,8 +18,25 @@ public class Cliente extends Pessoa {
 		this.arquivo = "clientes.txt";
 	}
 	
-	public boolean existeCliente(String nome) {
-		return false;
+	public boolean existeCliente(String nome) throws IOException {
+		List<String> nomes = this.listarClientes();
+		return nomes.contains(nome);
+	}
+	
+	public List<String> listarClientes() throws IOException {
+		String clientesString = IO.getConteudoDoArquivo(this.arquivo);
+		JSONObject clientes = new JSONObject(clientesString);
+		
+		List<String> lista = new ArrayList<String>();
+		
+		Iterator<?> keys = clientes.keys();
+		
+		while (keys.hasNext()) {
+			String key = (String) keys.next();
+			lista.add(clientes.getString(key));
+		}
+		
+		return lista;
 	}
 	
 	/**
