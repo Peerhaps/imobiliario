@@ -18,14 +18,12 @@ public class CadastroImovel {
 	double preco;
 	double mensalidade;
 	String nome;
+	String linha;
 	
 	/*
 	 * Metodo que efetua o cadastro de um novo imovel
 	 */
 	public void cadastraImovel(){
-		
-		System.out.println("Nome do Imóvel");
-		nome = ler.nextLine();
 		
 		System.out.println("Endereço do Imóvel");
 		end = ler.nextLine();
@@ -37,13 +35,13 @@ public class CadastroImovel {
 				System.out.println("Area do Imóvel");
 				area = ler.nextDouble();
 				ler.nextLine();
-				repete=false;
+				repete = false;
 			}catch(InputMismatchException e){
 				System.out.println("Área Incorreta\n");
 				ler.nextLine();
-				repete=true;
+				repete = true;
 			}
-		}while(repete==true);
+		}while(repete == true);
 		
 		
 		System.out.println("Tipo de Imóvel");
@@ -55,13 +53,13 @@ public class CadastroImovel {
 				System.out.println("Numero de quartos");
 				numQ = ler.nextInt();
 				ler.nextLine();
-				repete=false;
+				repete = false;
 			}catch(InputMismatchException e){
 				System.out.println("Digite apenas numeros Inteiros\n");
 				ler.nextLine();
-				repete=true;
+				repete = true;
 			}
-		}while(repete==true);
+		}while(repete == true);
 		
 		//Trata Excessão informaçao errada para numero de quartos
 		do{
@@ -69,29 +67,34 @@ public class CadastroImovel {
 				System.out.println("Numero de Banheiros");
 				numB = ler.nextInt();
 				ler.nextLine();
-				repete=false;
+				repete = false;
 			}catch (InputMismatchException e) {
 				System.out.println("Digite apenas numeros Inteiros\n");
 				ler.nextLine();
-				repete=true;
+				repete = true;
 			}
-		}while(repete==true);
+		}while(repete == true);
 
 		System.out.println("Possui Garagem - S-Sim/N-Não");
-		String pG=ler.nextLine();
+		String pG = ler.nextLine();
 			
 		possuiGaragem = false;
 		if(pG.toUpperCase().equals("S")){
-			possuiGaragem=true;
+			possuiGaragem = true;
 		}else if(pG.toUpperCase().equals("N")){
-			possuiGaragem=false;
+			possuiGaragem = false;
 		}
 		
-		System.out.println("Digite o contrato");
-		contrato = ler.nextLine();
+		System.out.println("Digite o contrato / Digite Sair para finalizar");
+		do{
+			contrato=contrato+" "+linha;
+			linha = ler.nextLine();
+			ler.nextLine();
+		}while(!linha.toLowerCase().equals("sair"));
+		
 		
 		System.out.println("Deseja colocar a Venda? - S-Sim/N-Não");
-		String vender=ler.nextLine();
+		String vender = ler.nextLine();
 		if(vender.toUpperCase().equals("S")){
 			//Trata Excessão para valor de venda informada incorretamente
 			do{
@@ -101,7 +104,7 @@ public class CadastroImovel {
 					ler.nextLine();
 					
 					//Intancia Imovel Venda e seta Valores 
-					ImovelVenda iV=new ImovelVenda();
+					ImovelVenda iV = new ImovelVenda();
 					iV.setEndereco(end);//Endereço
 					iV.setArea(area);//Área
 					iV.setTipo(tipo);//Tipo
@@ -114,17 +117,17 @@ public class CadastroImovel {
 					iV.setNome(nome);
 					iV.salvar();
 					
-					repete=false;
+					repete = false;
 				}catch(InputMismatchException e){
 					System.out.println("Valor Invalido\n");
 					ler.nextLine();
-					repete=true;	
+					repete = true;	
 				}
-			}while(repete==true);
+			}while(repete == true);
 		}
 		
 		System.out.println("Deseja colocar para alugar? - S-Sim N-Não");
-		String alugar=ler.nextLine();
+		String alugar = ler.nextLine();
 		
 		if(alugar.toUpperCase().equals("S")){
 			//Trata Excessão para valor de mensalidade informada incorretamente
@@ -135,7 +138,7 @@ public class CadastroImovel {
 					ler.nextLine();
 					
 					//Intancia Imovel Alugar e seta Valores 
-					ImovelAluguel iA=new ImovelAluguel();
+					ImovelAluguel iA = new ImovelAluguel();
 					iA.setEndereco(end);//Endereço
 					iA.setArea(area);//Área
 					iA.setTipo(tipo);//Tipo
@@ -148,13 +151,13 @@ public class CadastroImovel {
 					iA.setNome(nome);
 					iA.salvar();
 					
-					repete=false;
+					repete = false;
 				}catch(InputMismatchException e){
 					System.out.println("Valor Invalido\n");
 					ler.nextLine();
-					repete=true;	
+					repete = true;	
 				}
-			}while(repete==true);
+			}while(repete == true);
 		}
 	}
 }
