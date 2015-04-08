@@ -23,7 +23,7 @@ public class CadastroCliente {
 
 		System.out.println("Determine o CPF do Cliente: ");
 
-		entrada2 = new Scanner(System.in);
+		entrada2 = new Scanner(System.in); 
 
 		String cpf = entrada2.nextLine();
 		while (!ValidadorCpf.validaCpf(cpf)) {
