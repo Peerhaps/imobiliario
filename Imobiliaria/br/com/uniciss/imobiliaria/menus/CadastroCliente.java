@@ -18,7 +18,7 @@ public class CadastroCliente {
 
 		Cliente cliente = new Cliente();
 		System.out.println("Determine o nome do Cliente: ");
-		entrada = new Scanner(System.in);
+		entrada = new Scanner(System.in); 
 		cliente.setNome(entrada.nextLine());
 
 		System.out.println("Determine o CPF do Cliente: ");
