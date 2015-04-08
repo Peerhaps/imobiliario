@@ -1,1 +1,1 @@
-{}
+{"fdg":{"Endereço":"dsf","Tipo":"dfsdgf","Ocupado":false,"Contrato":"null null sdfsdf","Área":435,"Mensalidade":345325,"Número de quartos":34,"Tem garagem":true,"Nome":"fdg","Número de banheiros":324}}
