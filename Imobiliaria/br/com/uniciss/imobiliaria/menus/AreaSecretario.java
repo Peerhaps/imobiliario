@@ -18,6 +18,7 @@ public class AreaSecretario {
 		switch (option) {
 		case "1":
 			MenuCadastrarCliente.main(null);
+			
 			break;
 		case "2":
 			MenuCadastrarImovel.main(null);
@@ -35,8 +36,8 @@ public class AreaSecretario {
 			break;
 		}
 	
-		option="0";
-		
+		//option="0";
+		option=entrada.nextLine();
 		
 	}while(!option.equals("5"));
 }
