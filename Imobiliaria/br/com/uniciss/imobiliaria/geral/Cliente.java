@@ -37,7 +37,7 @@ public class Cliente extends Pessoa {
 	 * 
 	 * @param tipo
 	 *            String - tipo de cliente. TODO mudar tipo para enum.
-	 * @throws Exception
+	 * @throws Exception - Não é nenhum dos tipos definidos.
 	 */
 	public void setTipo(String tipo) throws Exception {
 
@@ -60,9 +60,4 @@ public class Cliente extends Pessoa {
 
 		this.dados.put("Tipo", tipo);
 	}
-
-	public static void main(String[] args) {
-		System.out.println("Determine o CPF do Cliente: ");
-	}
-
 }
