@@ -25,7 +25,10 @@ public class EditarCliente {
 		entrada = new Scanner(System.in);
 	
 		String nome=entrada.nextLine();
-		cliente.existeCliente(nome);
+		if(!Cliente.existe("clientes.txt", nome)) {
+			System.out.println("Cliente inexistente.");
+			return;
+		}
 		
 		System.out.println("Determine o CPF do Cliente: ");
 

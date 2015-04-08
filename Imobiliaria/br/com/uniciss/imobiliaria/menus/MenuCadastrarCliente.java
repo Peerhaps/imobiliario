@@ -32,7 +32,7 @@ public class MenuCadastrarCliente {
 			case "2":
 				System.out.println("Listar Cliente");
 				
-				List<String>clientes=Cliente.listarClientes();
+				List<String>clientes=Cliente.listar("clientes.txt");
 				for(String c : clientes){
 					System.out.println(c);
 				}

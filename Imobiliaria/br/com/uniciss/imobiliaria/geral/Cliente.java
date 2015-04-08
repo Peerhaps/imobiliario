@@ -18,27 +18,6 @@ public class Cliente extends Pessoa {
 		this.arquivo = "clientes.txt";
 	}
 
-	public static boolean existeCliente(String nome) throws IOException {
-		List<String> nomes = listarClientes();
-		return nomes.contains(nome);
-	}
-
-	public static List<String> listarClientes() throws IOException {
-		String clientesString = IO.getConteudoDoArquivo("clientes.txt");
-		JSONObject clientes = new JSONObject(clientesString);
-
-		List<String> lista = new ArrayList<String>();
-
-		Iterator<String> keys = clientes.keys();
-
-		while (keys.hasNext()) {
-			String key = keys.next();
-			JSONObject oClientes = clientes.getJSONObject(key);
-			lista.add(oClientes.getString("Nome"));
-		}
-
-		return lista;
-	}
 
 	/**
 	 * Retorna o número da conta bancária de cliente
