@@ -11,6 +11,10 @@ public class Cliente extends Pessoa {
 		this.arquivo = "clientes.txt";
 	}
 	
+	public boolean existeCliente(String nome) {
+		return false;
+	}
+	
 	/**
 	 * Retorna o número da conta bancária de cliente
 	 * 
