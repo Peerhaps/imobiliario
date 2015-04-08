@@ -92,7 +92,6 @@ public class CadastroImovel {
 		do{
 			contrato=contrato+" "+linha;
 			linha = ler.nextLine();
-			ler.nextLine();
 		}while(!linha.toLowerCase().equals("sair"));
 		
 		

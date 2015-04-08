@@ -9,7 +9,7 @@ public class MenuCadastrarImovel {
 		System.out.println("Menu Cadastro de Imovel:\n" + "1 - Cadastrar Imóvel \n"
 				+ "2 - Listar\n" + "3 - Alterar\n" + "4 - Excluir\n"
 				+ "5 - Voltar ao menu anterior  ");
-		
+		  
 		String opcao="";
 		
 		ler = new Scanner(System.in);
