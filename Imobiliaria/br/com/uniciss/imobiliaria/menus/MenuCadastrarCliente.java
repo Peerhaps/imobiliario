@@ -51,7 +51,7 @@ public class MenuCadastrarCliente {
 				
 			case "5":
 				System.out.println("Voltar ao menu anterior");
-				return;
+				return; 
 			default:
 				System.out.println("Informaste o valor errado!");
 				break;
