@@ -1,10 +1,6 @@
 package br.com.uniciss.imobiliaria.geral;
 
-import java.io.IOException;
-import java.util.List;
-
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 public class Imovel extends Dado {
 	
@@ -13,10 +9,7 @@ public class Imovel extends Dado {
 	public Imovel() {
 		this.arquivo = "imoveis.txt";
 	}
-	
-	public static List<String> listarImoveis() throws IOException {
-		return null;
-	}
+	// 
 	
 	/**
 	 * Retorna o endereço do imóvel.
