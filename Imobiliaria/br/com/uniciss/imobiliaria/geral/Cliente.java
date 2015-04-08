@@ -13,32 +13,33 @@ public class Cliente extends Pessoa {
 
 	private List<Imovel> imoveisAluguelVenda;
 	private List<ImovelAluguel> imoveisAlugados;
-	
+
 	public Cliente() {
 		this.arquivo = "clientes.txt";
 	}
-	
-	public boolean existeCliente(String nome) throws IOException {
-		List<String> nomes = this.listarClientes();
+
+	public static boolean existeCliente(String nome) throws IOException {
+		List<String> nomes = listarClientes();
 		return nomes.contains(nome);
 	}
-	
-	public List<String> listarClientes() throws IOException {
-		String clientesString = IO.getConteudoDoArquivo(this.arquivo);
+
+	public static List<String> listarClientes() throws IOException {
+		String clientesString = IO.getConteudoDoArquivo("clientes.txt");
 		JSONObject clientes = new JSONObject(clientesString);
-		
+
 		List<String> lista = new ArrayList<String>();
-		
-		Iterator<?> keys = clientes.keys();
-		
+
+		Iterator<String> keys = clientes.keys();
+
 		while (keys.hasNext()) {
-			String key = (String) keys.next();
-			lista.add(clientes.getString(key));
+			String key = keys.next();
+			//clientes.getJSONObject(key)
+			//lista.add((clientes.get(key)));
 		}
-		
+
 		return lista;
 	}
-	
+
 	/**
 	 * Retorna o número da conta bancária de cliente
 	 * 
@@ -67,16 +68,16 @@ public class Cliente extends Pessoa {
 	public String getTipoCliente() {
 		return this.dados.getString("Tipo");
 	}
-	
+
 	public void adicionarImovel(Imovel imovel) {
-		
+
 	}
-	
+
 	public void removerImovel(Imovel imovel) {
-		
+
 	}
-	
+
 	public void alugarImovel(ImovelAluguel imovel) {
-		
+
 	}
 }
