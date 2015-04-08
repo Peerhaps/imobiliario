@@ -38,7 +38,7 @@ private static Scanner entrada;
 				break;
 			
 			}
-			opcao="0";
+			//opcao="0";
 			opcao=entrada.nextLine();
 		}while(!opcao.equals("3"));
 		

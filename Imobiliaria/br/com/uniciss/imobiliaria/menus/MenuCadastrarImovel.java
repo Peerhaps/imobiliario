@@ -46,7 +46,7 @@ public class MenuCadastrarImovel {
 				break;
 			
 			}
-			opcao="0";
+		//	opcao="0";
 			opcao=ler.nextLine();
 		}while(!opcao.equals("5"));
 		
