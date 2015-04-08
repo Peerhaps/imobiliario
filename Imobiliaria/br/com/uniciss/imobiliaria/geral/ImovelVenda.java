@@ -3,7 +3,7 @@ package br.com.uniciss.imobiliaria.geral;
 public class ImovelVenda extends Imovel {
 	
 	public ImovelVenda() {
-		//this.arquivo = "imoveis_venda.json"
+		this.arquivo = "vendas.json";
 	}
 
 	public double getPreco() {

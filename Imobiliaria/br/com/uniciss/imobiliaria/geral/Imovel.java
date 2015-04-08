@@ -3,7 +3,7 @@ package br.com.uniciss.imobiliaria.geral;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class Imovel {
+public class Imovel extends Dado {
 
 	protected JSONObject dados = new JSONObject();
 	

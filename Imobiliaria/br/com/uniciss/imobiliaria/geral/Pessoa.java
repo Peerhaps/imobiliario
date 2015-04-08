@@ -1,34 +1,6 @@
 package br.com.uniciss.imobiliaria.geral;
 
-import java.io.IOException;
-
-import org.json.JSONObject;
-
-import br.com.uniciss.imobiliaria.util.IO;
-
-public abstract class Pessoa {
-
-	protected JSONObject dados = new JSONObject();
-	protected String arquivo;
-
-	/**
-	 * Retorna o nome do cliente.
-	 * 
-	 * @return String - Nome do cliente.
-	 */
-	public String getNome() {
-		return this.dados.getString("Nome");
-	}
-
-	/**
-	 * Edita o nome do cliente.
-	 * 
-	 * @param nome
-	 *            String - Novo nome.
-	 */
-	public void setNome(String nome) {
-		this.dados.put("Nome", nome);
-	}
+public abstract class Pessoa extends Dado {
 
 	/**
 	 * Retorna o CPF do cliente.
@@ -109,25 +81,5 @@ public abstract class Pessoa {
 	@Override
 	public String toString() {
 		return this.dados.toString();
-	}
-
-	/**
-	 * Grava os dados do objeto.
-	 * 
-	 * @return boolean Gravação feita com sucesso?
-	 */
-	public boolean salvar() {
-		try {
-			String conteudo = IO.getConteudoDoArquivo(this.arquivo);
-			JSONObject registros = new JSONObject(conteudo);
-
-			registros.put(this.getNome(), this.dados);
-
-			IO.setConteudoDoArquivo(this.arquivo, registros.toString());
-
-			return true;
-		} catch (IOException e) {
-			return false;
-		}
 	}
 }

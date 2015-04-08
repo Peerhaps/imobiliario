@@ -107,6 +107,7 @@ public class CadastroImovel {
 					iV.setContrato(contrato);//Contrato
 					iV.setOcupado(false);//Ocupado
 					iV.setPreco(preco);//Preço
+					iV.salvar();
 					
 					repete=false;
 				}catch(InputMismatchException e){
@@ -139,6 +140,7 @@ public class CadastroImovel {
 					iA.setContrato(contrato);//Contrato
 					iA.setOcupado(false);//Ocupado
 					iA.setMensalidade(mensalidade);
+					iA.salvar();
 					
 					repete=false;
 				}catch(InputMismatchException e){
