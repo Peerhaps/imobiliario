@@ -24,7 +24,7 @@ public class CadastroImovel {
 	 * Metodo que efetua o cadastro de um novo imovel
 	 */
 	public void cadastraImovel(){
-		
+		    
 		System.out.println("Nome do proprietário");
 		nome = ler.nextLine();
 		
