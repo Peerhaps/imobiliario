@@ -1,7 +1,16 @@
 package br.com.uniciss.imobiliaria.geral;
 
+import java.util.List;
+
 public class Cliente extends Pessoa {
 
+	private List<Imovel> imoveisAluguelVenda;
+	private List<ImovelAluguel> imoveisAlugados;
+	
+	public Cliente() {
+		this.arquivo = "clientes.txt";
+	}
+	
 	/**
 	 * Retorna o número da conta bancária de cliente
 	 * 
@@ -30,35 +39,16 @@ public class Cliente extends Pessoa {
 	public String getTipoCliente() {
 		return this.dados.getString("Tipo");
 	}
-
-	/**
-	 * Alterar a função do cliente. Pode ser: Locatário, Locador, Proprietário e
-	 * Comprador.
-	 * 
-	 * @param tipo
-	 *            String - tipo de cliente. TODO mudar tipo para enum.
-	 * @throws Exception - Não é nenhum dos tipos definidos.
-	 */
-	public void setTipo(String tipo) throws Exception {
-		this.arquivo = "clientes.txt";
-/*
-		switch (tipo.toLowerCase()) {
-		case "locatario":
-			this.arquivo = "locatorios.json";
-			break;
-		case "locator":
-			this.arquivo = "locatores.json";
-			break;
-		case "proprietario":
-			this.arquivo = "proprietarios.json";
-			break;
-		case "comprador":
-			this.arquivo = "compradores.json";
-			break;
-		default:
-			throw new Exception("Tipo incorreto.");
-		}
-*/
-		this.dados.put("Tipo", tipo);
+	
+	public void adicionarImovel(Imovel imovel) {
+		
+	}
+	
+	public void removerImovel(Imovel imovel) {
+		
+	}
+	
+	public void alugarImovel(ImovelAluguel imovel) {
+		
 	}
 }

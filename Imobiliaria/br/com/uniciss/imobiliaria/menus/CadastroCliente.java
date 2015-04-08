@@ -45,31 +45,6 @@ public class CadastroCliente {
 		System.out.println("Determine o numero da conta Bancaria: ");
 		cliente.setNumeroContaBancaria(entrada2.nextInt());
 
-		int option;
-		System.out
-				.println("Cadastrar Cliente como: \n" + "1 - Locator;\n"
-						+ "2 - Locatário;\n" + "3 - Proprietario\n"
-						+ "4 - Comprador\n");
-
-		option = entrada.nextInt();
-		switch (option) {
-		case 1:
-			cliente.setTipo("Locator"); 
-			break;
-		case 2:
-			cliente.setTipo("Locatario");
-			break;
-		case 3:
-			cliente.setTipo("Proprietario");
-			break;
-		case 4:
-			cliente.setTipo("Comprador");
-
-		default:
-			System.out.println("OPCAO ERRADA!");
-			break;
-		}
-
 		cliente.salvar();
 
 	}
