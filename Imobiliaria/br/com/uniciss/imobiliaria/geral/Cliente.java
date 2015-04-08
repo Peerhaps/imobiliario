@@ -33,8 +33,8 @@ public class Cliente extends Pessoa {
 
 		while (keys.hasNext()) {
 			String key = keys.next();
-			//clientes.getJSONObject(key)
-			//lista.add((clientes.get(key)));
+			JSONObject oClientes = clientes.getJSONObject(key);
+			lista.add(oClientes.getString("Nome"));
 		}
 
 		return lista;
