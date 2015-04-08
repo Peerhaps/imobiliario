@@ -157,7 +157,7 @@ public class CadastroImovel {
 				}catch(InputMismatchException e){
 					System.out.println("Valor Invalido\n");
 					ler.nextLine();
-					repete = true;	
+					repete = true;	 
 				}
 			}while(repete == true);
 		}

@@ -1,5 +1,7 @@
 package br.com.uniciss.imobiliaria.menus;
 
+import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
 
 import br.com.uniciss.imobiliaria.geral.Imovel;
@@ -7,7 +9,7 @@ import br.com.uniciss.imobiliaria.geral.Imovel;
 public class MenuCadastrarImovel {      
 	private static Scanner ler;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		String opcao="";
 		ler = new Scanner(System.in);
 		
@@ -28,8 +30,11 @@ public class MenuCadastrarImovel {
 			case "2":
 				System.out.println("Listar Imóvel");
 				Imovel i=new Imovel();
-				//i.listarImoveis();
+				List<String>imoveis=i.listar("imoveis.txt", "Endereço");
 				
+				for(String c : imoveis){
+					System.out.println("Imóvel no Endereço:"+c);
+				}
 			break;
 			
 			case "3":
