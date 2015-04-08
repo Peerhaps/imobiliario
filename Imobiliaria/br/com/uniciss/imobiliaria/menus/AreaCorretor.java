@@ -2,10 +2,13 @@ package br.com.uniciss.imobiliaria.menus;
 
 import java.util.Scanner;
 
+import br.com.uniciss.imobiliaria.geral.Corretor;
+import br.com.uniciss.imobiliaria.geral.ImovelVenda;
+
 public class AreaCorretor {  
-	public static void areaCorretor() {
+	public static void areaCorretor() throws Exception {
 		System.out.println("BEM VINDO A ÁREA DO CORRETOR");
-		System.out.println("\n ESCOLHA AS OPÇÕES: "
+		System.out.println("\n ESCOLHA AS OPÇÕES:\n "
 				+ "1-Menu Cliente\n"
 				+ "2-Receber Mensalidade\n"
 				+ "3-Menu Imóveis\n"
@@ -22,25 +25,26 @@ public class AreaCorretor {
 		do{
 			switch (option) {
 			case "1":
-				
+				MenuCadastrarCliente.main(null);
 				break;
 			case "2":
-				
+				System.out.println("OPCAO DESABILITADA");
 				break;
 			case "3":
-				
+				MenuCadastrarImovel.main(null);
 				break;
 			case "4":
-				
+				System.out.println("OPCAO DESABILITADA");
 				break;
 			case "5":
-				
+				System.out.println("OPCAO DESABILITADA");
 				break;	
 			case "6":
 				
+			//	Corretor.vender(imovel, comprador);
 				break;
 			case "7":
-				
+			//	Corretor.alugar(locatario, imovel);
 				break;
 			case "8":
 				
