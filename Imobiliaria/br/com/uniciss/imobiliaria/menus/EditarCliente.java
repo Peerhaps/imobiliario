@@ -6,7 +6,7 @@ import java.util.Scanner;
 import br.com.uniciss.imobiliaria.geral.Cliente;
 import br.com.uniciss.imobiliaria.util.ValidadorCpf;
 
-public class EditarListarCliente {
+public class EditarCliente {
 	/**
 	 * Classe para editar clientes 
 	 */
@@ -54,12 +54,6 @@ public class EditarListarCliente {
 		cliente.salvar();
 
 	}
-	public static void listarCliente() throws IOException{
 	
-		
-		
-		
-		
-	}
 	
 }
