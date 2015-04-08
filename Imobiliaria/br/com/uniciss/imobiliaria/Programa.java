@@ -8,6 +8,8 @@ import br.com.uniciss.imobiliaria.menus.AreaSecretario;
 import br.com.uniciss.imobiliaria.menus.MenuAdministrador;
 
 public class Programa {
+	private static Scanner entrada;
+
 	//Menu Geral Programa
 	public static void main(String[] args) throws Exception {
 		System.out.println("BEM VINDO AO IMOBILIARIA SOFTWARE");
@@ -16,8 +18,7 @@ public class Programa {
 				+ "2-MENU CORRETOR\n"
 				+ "3-MENU ADMINISTRADOR\n"
 				+ "4-SAIR");
-		//Switch com as opcoes de menu;
-		Scanner entrada = new Scanner(System.in);
+		entrada = new Scanner(System.in);
 	
 		String option = entrada.nextLine();
 		do{
