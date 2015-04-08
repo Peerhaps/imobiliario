@@ -25,6 +25,9 @@ public class CadastroImovel {
 	 */
 	public void cadastraImovel(){
 		
+		System.out.println("Nome do proprietário");
+		nome = ler.nextLine();
+		
 		System.out.println("Endereço do Imóvel");
 		end = ler.nextLine();
 		
