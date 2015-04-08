@@ -2,20 +2,22 @@ package br.com.uniciss.imobiliaria.menus;
 
 import java.util.Scanner;
 
+import br.com.uniciss.imobiliaria.geral.Imovel;
+
 public class MenuCadastrarImovel {      
 	private static Scanner ler;
 
 	public static void main(String[] args) {
-		System.out.println("Menu Cadastro de Imovel:\n" + "1 - Cadastrar Imóvel \n"
-				+ "2 - Listar\n" + "3 - Alterar\n" + "4 - Excluir\n"
-				+ "5 - Voltar ao menu anterior  ");
-		  
 		String opcao="";
-		
 		ler = new Scanner(System.in);
-		opcao=ler.nextLine();
+		
 		
 		do{
+			System.out.println("Menu Cadastro de Imovel:\n" + "1 - Cadastrar Imóvel \n"
+					+ "2 - Listar\n" + "3 - Alterar\n" + "4 - Excluir\n"
+					+ "5 - Voltar ao menu anterior  ");
+			opcao=ler.nextLine();
+			
 			switch (opcao){
 			case "1":
 				System.out.println("\nCadastrar novo Imóvel para Venda\n---------------------------------");
@@ -24,17 +26,19 @@ public class MenuCadastrarImovel {
 			break;
 			
 			case "2":
-				System.out.println("Listar Cliente");
+				System.out.println("Listar Imóvel");
+				Imovel i=new Imovel();
+				//i.listarImoveis();
 				
 			break;
 			
 			case "3":
-				System.out.println("Alterar Cliente");
+				System.out.println("Alterar Imovel");
 				
 			break;
 				
 			case "4":
-				System.out.println("Excluir Cliente");
+				System.out.println("Excluir Imovel");
 				
 				break;
 				
