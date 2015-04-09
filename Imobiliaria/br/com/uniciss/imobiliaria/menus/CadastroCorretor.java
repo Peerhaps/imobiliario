@@ -94,7 +94,7 @@ public class CadastroCorretor {
 			System.out.println("Determine a Senha do Corretor: ");
 			senha = entrada.nextLine();
 			corretor.setSenha(senha);
-			corretor.salvar();
+			corretor.salvar(); 
 
 		} while (senha.equals(""));
 		corretor.salvar();
