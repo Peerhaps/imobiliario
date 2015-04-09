@@ -9,6 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import br.com.uniciss.imobiliaria.util.IO;
+import br.com.uniciss.imobiliaria.util.RegistroInexistente;
 
 public class Imovel extends Dado {
 
@@ -176,6 +177,22 @@ public class Imovel extends Dado {
 		}
 
 		return lista;
+	}
+	
+	@Override
+	public boolean excluir() {
+		try {
+			if(!this.existe())
+				throw new RegistroInexistente();
+			
+			JSONObject contas = getDadosConteudo(this.getArquivo());
+			contas.remove(this.getKey());
+			IO.setConteudoDoArquivo(getArquivo(), contas.toString());
+
+			return true;
+		} catch (IOException e) {
+			return false;
+		}
 	}
 	
 	public boolean existe(){
