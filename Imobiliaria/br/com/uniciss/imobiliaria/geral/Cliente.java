@@ -1,17 +1,18 @@
 package br.com.uniciss.imobiliaria.geral;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
-public class Cliente extends Pessoa {
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-	private Set<Integer> imoveisAluguelVenda = new HashSet<Integer>();
-	private Set<Integer> imoveisAlugados = new HashSet<Integer>();
+public class Cliente extends Pessoa {
 	
 	protected String getArquivo() {
 		return "clientes.txt";
 	}
-
 
 	/**
 	 * Retorna o número da conta bancária de cliente
@@ -40,29 +41,5 @@ public class Cliente extends Pessoa {
 	 */
 	public String getTipoCliente() {
 		return this.dados.getString("Tipo");
-	}
-
-	public void adicionarImovel(Imovel imovel) {
-		int chave = Integer.parseInt(imovel.getKey());
-		
-		if(!this.imoveisAluguelVenda.contains(chave))
-			this.imoveisAluguelVenda.add(chave);
-	}
-
-	public void removerImovel(Imovel imovel) {
-		int chave = Integer.parseInt(imovel.getKey());
-		
-		if(this.imoveisAluguelVenda.contains(chave))
-			imoveisAluguelVenda.remove(chave);
-	}
-
-	public void alugarImovel(ImovelAluguel imovel) {
-		int chave = Integer.parseInt(imovel.getKey());
-		
-		imovel.setALocacao(false);
-		imovel.setAVenda(false);
-		imovel.setOcupado(true);
-		
-		this.imoveisAlugados.add(chave);
 	}
 }

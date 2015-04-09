@@ -2,6 +2,14 @@ package br.com.uniciss.imobiliaria.geral;
 
 public class ImovelAluguel extends Imovel {
 	
+	public String getLocatario() {
+		return this.dados.getString("Locatário");
+	}
+	
+	public void setLocatario(String nomeLocatario) {
+		this.dados.put("Locatário", nomeLocatario);
+	}
+	
 	public double getMensalidade() {
 		return this.dados.getDouble("Mensalidade");
 	}

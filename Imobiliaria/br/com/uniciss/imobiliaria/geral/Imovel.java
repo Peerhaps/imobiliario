@@ -13,6 +13,14 @@ import br.com.uniciss.imobiliaria.util.IO;
 public class Imovel extends Dado {
 
 	private int id = -1;
+	
+	public String getProprietario() {
+		return this.dados.getString("Proprietário");
+	}
+	
+	public void setProprietario(String nomeProprietario) {
+		this.dados.put("Proprietário", nomeProprietario);
+	}
 
 	@Override
 	public boolean salvar() {

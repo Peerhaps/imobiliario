@@ -8,6 +8,7 @@ import java.util.List;
 import org.json.JSONObject;
 
 import br.com.uniciss.imobiliaria.util.IO;
+import br.com.uniciss.imobiliaria.util.RegistroInexistente;
 
 public abstract class Dado {
 
@@ -76,6 +77,9 @@ public abstract class Dado {
 
 	public boolean excluir() {
 		try {
+			if(!existe(getArquivo(), getKey()))
+				throw new RegistroInexistente();
+			
 			JSONObject contas = getDadosConteudo(this.getArquivo());
 			contas.remove(this.getKey());
 			IO.setConteudoDoArquivo(getArquivo(), contas.toString());
