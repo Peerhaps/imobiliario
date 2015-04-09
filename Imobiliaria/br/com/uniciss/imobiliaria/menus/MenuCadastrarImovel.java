@@ -12,7 +12,7 @@ public class MenuCadastrarImovel {
 	public static void main(String[] args) throws IOException {
 		String opcao="";
 		ler = new Scanner(System.in);
-		
+		String id;
 		
 		do{
 			System.out.println("Menu Cadastro de Imovel:\n" + "1 - Cadastrar Imóvel \n"
@@ -35,15 +35,21 @@ public class MenuCadastrarImovel {
 				for(String c : imoveis){
 					System.out.println("Imóvel no Endereço:"+c);
 				}
+				
+				System.out.println();
 			break;
 			
 			case "3":
 				System.out.println("Alterar Imovel");
+				System.out.println("Digite o id do Imovel");
+				id=ler.nextLine();
 				
 			break;
 				
 			case "4":
 				System.out.println("Excluir Imovel");
+				System.out.println("Digite o id do Imovel");
+				id=ler.nextLine();
 				
 				break;
 				
@@ -55,8 +61,7 @@ public class MenuCadastrarImovel {
 				break;
 			
 			}
-		//	opcao="0";
-			opcao=ler.nextLine();
+
 		}while(!opcao.equals("5"));
 		
 	}
