@@ -5,11 +5,6 @@ public class Secretario extends Autenticavel {
 	private String horaDeEntrada;
 	private String horaDeSaida;
 
-	@Override
-	protected String getArquivo() {
-		return "secretarios.txt";
-	}
-
 	public String getHoraDeEntrada() {
 		return horaDeEntrada;
 	}
