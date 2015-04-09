@@ -177,5 +177,13 @@ public class Imovel extends Dado {
 
 		return lista;
 	}
+	
+	public boolean existe(){
+		try {
+			return getDadosConteudo(getArquivo()).has(getKey());
+		} catch (IOException e) {
+			return false;
+		}
+	}
 
 }
