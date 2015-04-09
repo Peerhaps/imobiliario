@@ -30,10 +30,10 @@ public class MenuCadastrarImovel {
 			case "2":
 				System.out.println("Listar Imóvel");
 				Imovel i=new Imovel();
-				List<String>imoveis=i.listar("imoveis.txt", "Endereço");
+				List<String>imoveis=i.listarImoveis();
 				
 				for(String c : imoveis){
-					System.out.println("Imóvel no Endereço:"+c);
+					System.out.println("Id:"+c);
 				}
 				
 				System.out.println();

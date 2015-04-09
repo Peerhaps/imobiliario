@@ -36,7 +36,7 @@ public class CadastroImovel {
 			nome = ler.nextLine();
 			
 			if(cliente.existe("clientes.txt", nome)){
-				System.out.println("CLiente Existe");
+				cliente.setNome(nome);
 				cont=false;
 			}else{
 				System.out.println("Não Existe");
@@ -136,6 +136,8 @@ public class CadastroImovel {
 					iV.setAVenda(true); 
 					iV.salvar();
 					
+					cliente.adicionarImovel(iV);
+					
 					repete = false;
 				}catch(InputMismatchException e){
 					System.out.println("Valor Invalido\n");
@@ -169,6 +171,8 @@ public class CadastroImovel {
 					iA.setMensalidade(mensalidade);
 					iA.setALocacao(true);
 					iA.salvar();
+					
+					cliente.adicionarImovel(iA);
 					
 					repete = false;
 				}catch(InputMismatchException e){
