@@ -1,6 +1,9 @@
 package br.com.uniciss.imobiliaria.geral;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -144,6 +147,23 @@ public class Imovel extends Dado {
 
 	public void setALocacao(boolean aLocacao) {
 		this.dados.put("A locação", aLocacao);
+	}
+	
+	public static List<String> listarImoveis()
+			throws IOException {
+		JSONObject contas = getDadosConteudo("imoveis.txt");
+
+		List<String> lista = new ArrayList<String>();
+
+		Iterator<String> keys = contas.keys();
+
+		while (keys.hasNext()) {
+			String key = keys.next();
+			JSONObject oClientes = contas.getJSONObject(key);
+			lista.add(key + " " + oClientes.getString("Endereço"));
+		}
+
+		return lista;
 	}
 
 }
