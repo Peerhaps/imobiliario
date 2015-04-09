@@ -57,6 +57,12 @@ public class Cliente extends Pessoa {
 	}
 
 	public void alugarImovel(ImovelAluguel imovel) {
-
+		int chave = Integer.parseInt(imovel.getKey());
+		
+		imovel.setALocacao(false);
+		imovel.setAVenda(false);
+		imovel.setOcupado(true);
+		
+		this.imoveisAlugados.add(chave);
 	}
 }
