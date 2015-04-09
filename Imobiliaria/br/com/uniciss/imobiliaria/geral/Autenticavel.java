@@ -6,7 +6,7 @@ public abstract class Autenticavel extends Pessoa {
 	}
 	
 	public void setSenha(String senha) {
-		this.dados.put("Senha", senha);
+		this.dados.put("Senha", senha); 
 	}
 	
 	public void logar(String login, String senha) {
