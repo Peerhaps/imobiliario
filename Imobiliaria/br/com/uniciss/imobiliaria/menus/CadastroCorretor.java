@@ -13,12 +13,16 @@ public class CadastroCorretor {
 
 	public static void main(String[] args) {
 		entrada = new Scanner(System.in);
-
 		Corretor corretor = new Corretor();
-		System.out.println("Determine o nome: ");
-		String nome = entrada.toString();
-		corretor.setNome(nome);
-		entrada.nextLine();
+		String nome;
+		do {
+
+			System.out.println("Determine o nome: ");
+			nome = entrada.nextLine();
+			corretor.setNome(nome);
+
+		} while (nome.equals(""));
+		// entrada.nextLine();
 
 		System.out.println("Determine CPF: ");
 		String cpf = entrada.nextLine();
@@ -47,10 +51,19 @@ public class CadastroCorretor {
 			}
 		} while (erro);
 
-		System.out.println("Determine o Telefone: ");
-		int telefone = entrada.nextInt();
-		corretor.setTelefone(String.valueOf(telefone));
-		entrada.nextLine();
+		do {
+			try {
+				System.out.println("Determine o Telefone: ");
+				int telefone = entrada.nextInt();
+				corretor.setTelefone(String.valueOf(telefone));
+
+				erro = false;
+
+			} catch (Exception e) {
+				erro = true;
+				entrada.nextLine();
+			}
+		} while (erro);
 
 		System.out.println("Determine o endereco: ");
 		corretor.setEndereco(entrada.nextLine());
@@ -76,11 +89,15 @@ public class CadastroCorretor {
 		}
 		corretor.setHoraDeSaida(String.valueOf(validaHora));
 
-		System.out.println("Determine a Senha do Corretor: ");
-		corretor.setSenha(entrada.nextLine());
-		entrada.nextLine();
-		corretor.salvar();
+		String senha;
+		do {
+			System.out.println("Determine a Senha do Corretor: ");
+			senha = entrada.nextLine();
+			corretor.setSenha(senha);
+			corretor.salvar();
 
+		} while (senha.equals(""));
+		corretor.salvar();
 	}
 
 }

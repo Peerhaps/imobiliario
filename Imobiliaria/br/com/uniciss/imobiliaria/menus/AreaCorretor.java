@@ -34,7 +34,7 @@ public class AreaCorretor {
 				MenuCadastrarImovel.main(null);
 				break;
 			case "4":
-				System.out.println("OPCAO DESABILITADA");
+				
 				break;
 			case "5":
 				System.out.println("OPCAO DESABILITADA");
