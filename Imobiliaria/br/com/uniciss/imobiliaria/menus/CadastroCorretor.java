@@ -30,26 +30,23 @@ public class CadastroCorretor {
 		}
 		corretor.setCpf(cpf);
 
-		
-		//System.out.println("Determine o RG: ");
-		int rg;
-		boolean erro=false;
-		do{
-		try {
-			System.out.println("Determine o RG: ");
-			rg = entrada.nextInt();
-			entrada.nextLine();
-			corretor.setRg(rg);
-			erro=false;
-			
-		} catch (Exception e) {
-			erro=true;
-		}
-		}while(erro);
-		
-		
-		
-			
+		// System.out.println("Determine o RG: ");
+		boolean erro = false;
+		do {
+			try {
+				System.out.println("Determine o RG: ");
+				int rg = 0;
+				rg = entrada.nextInt();
+				entrada.nextLine();
+				corretor.setRg(rg);
+				erro = false;
+
+			} catch (Exception e) {
+				erro = true;
+				entrada.nextLine();
+			}
+		} while (erro);
+
 		System.out.println("Determine o Telefone: ");
 		int telefone = entrada.nextInt();
 		corretor.setTelefone(String.valueOf(telefone));
