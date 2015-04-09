@@ -34,7 +34,7 @@ public class CadastroCliente {
 		cliente.setCpf(cpf);
 
 		System.out.println("Determine o RG do Cliente: ");
-		cliente.setRg(entrada.nextLine());
+		cliente.setRg(entrada.nextInt());
 
 		System.out.println("Determine o Telefone do Cliente: ");
 		cliente.setTelefone(entrada2.nextLine());

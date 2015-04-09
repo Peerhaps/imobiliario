@@ -32,7 +32,7 @@ public class CadastroSecretario {
 		secretario.setCpf(cpf);
 
 		System.out.println("Determine o RG: ");
-		secretario.setRg(entrada.nextLine());
+		secretario.setRg(entrada.nextInt());
 
 		System.out.println("Determine o Telefone: ");
 		secretario.setTelefone(entrada2.nextLine());

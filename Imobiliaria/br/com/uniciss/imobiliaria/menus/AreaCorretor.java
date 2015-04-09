@@ -34,11 +34,12 @@ public class AreaCorretor {
 				MenuCadastrarImovel.main(null);
 				break;
 			case "4":
-				
+				MenuAgendar agenda = new MenuAgendar();
+				agenda.agendarVisita();
 				break;
 			case "5":
 				Corretor corretor = new Corretor();	
-				corretor.vender();
+				corretor.vender(null, null);
 				break;	
 			case "6":
 			//	Corretor.vender(imovel, comprador);

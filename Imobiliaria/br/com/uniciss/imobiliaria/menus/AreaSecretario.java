@@ -24,7 +24,8 @@ public class AreaSecretario {
 				System.out.println("OPCAO DESABILITADA");
 				break;
 			case "4":
-				System.out.println("OPCAO DESABILITADA");
+				MenuAgendar agenda = new MenuAgendar();
+				agenda.agendarVisita();
 				break;
 			case "5":
 				break;
