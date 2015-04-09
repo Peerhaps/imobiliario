@@ -46,6 +46,10 @@ public class Imovel extends Dado {
 	protected String getKey() {
 		return String.valueOf(id);
 	}
+	
+	public void setKey(int key) {
+		this.id = key;
+	}
 
 	/**
 	 * Retorna o endereço do imóvel.

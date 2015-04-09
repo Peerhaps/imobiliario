@@ -1,12 +1,5 @@
 package br.com.uniciss.imobiliaria.geral;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 public class Cliente extends Pessoa {
 	
