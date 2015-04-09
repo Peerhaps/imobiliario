@@ -134,10 +134,8 @@ public class CadastroImovel {
 					iV.setOcupado(false);//Ocupado
 					iV.setPreco(preco);//Preço
 					iV.setAVenda(true);
-					//iV.setPropietario;
+					iV.setProprietario(nome);
 					iV.salvar();
-					
-					cliente.adicionarImovel(iV);
 					
 					repete = false;
 				}catch(InputMismatchException e){
@@ -161,17 +159,17 @@ public class CadastroImovel {
 					
 					//Intancia Imovel Alugar e seta Valores 
 					ImovelAluguel iA = new ImovelAluguel();
-					iA.setEndereco(end);//Endereço
-					iA.setArea(area);//Área
-					iA.setTipo(tipo);//Tipo
-					iA.setNumeroDeQuartos(numQ);//Numero De Quartos
-					iA.setNumeroDeBanheiros(numB);//Numero de banheiros
-					iA.setTemGaragem(possuiGaragem);//Possui Garagem
-					iA.setContrato(contrato);//Contrato
-					iA.setOcupado(false);//Ocupado
+					iA.setEndereco(end);
+					iA.setArea(area);
+					iA.setTipo(tipo);
+					iA.setNumeroDeQuartos(numQ);
+					iA.setNumeroDeBanheiros(numB);
+					iA.setTemGaragem(possuiGaragem);
+					iA.setContrato(contrato);
+					iA.setOcupado(false);
 					iA.setMensalidade(mensalidade);
 					iA.setALocacao(true);
-					//iA.setPropeitario//
+					iA.setProprietario(nome);
 					iA.salvar();
 											
 					repete = false;

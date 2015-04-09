@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import br.com.uniciss.imobiliaria.geral.Imovel;
+import br.com.uniciss.imobiliaria.util.RegistroInexistente;
 
 public class MenuCadastrarImovel {      
 	private static Scanner ler;
@@ -12,7 +13,7 @@ public class MenuCadastrarImovel {
 	public static void main(String[] args) throws IOException {
 		String opcao="";
 		ler = new Scanner(System.in);
-		String id;
+		int id;
 		
 		do{
 			System.out.println("Menu Cadastro de Imovel:\n" + "1 - Cadastrar Imóvel \n"
@@ -47,7 +48,18 @@ public class MenuCadastrarImovel {
 			case "4":
 				System.out.println("Excluir Imovel");
 				System.out.println("Digite o id do Imovel");
-				id=ler.nextLine();
+				id=ler.nextInt();
+				ler.nextLine();
+				Imovel imovel = new Imovel();
+				imovel.setKey(id);
+				try{
+					if(imovel.excluir()){
+						System.out.println("Imovel Excluido com sucesso");
+					}
+				}catch (RegistroInexistente e) {
+					System.out.println("Imovel Inexistente");
+				}
+				
 				
 				break;
 			case "5":
