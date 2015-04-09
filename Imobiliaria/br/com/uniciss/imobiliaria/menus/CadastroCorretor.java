@@ -44,6 +44,7 @@ public class CadastroCorretor {
 		System.out.println("Determine a Hora de Saída: ");
 		corretor.setHoraDeSaida(entrada.nextLine());
 		
+		corretor.salvar();
 		
 	}
 
