@@ -22,9 +22,6 @@ public class MenuCadastrarCorretor {
 			
 			
 			do{
-				System.out.println("Menu Cadastro de Corretor:\n" + "1 - Cadastrar\n"
-						+ "2 - Listar\n" + "3 - Alterar\n" + "4 - Excluir\n"
-						+ "5 - Voltar ao menu anterior  ");
 				
 				switch (opcao){
 				case "1":
@@ -34,10 +31,12 @@ public class MenuCadastrarCorretor {
 				
 				case "2":
 					System.out.println("Listar Corretor");
-					List<String> corretores = Corretor.listar("corretores.txt");
+					List<String> corretores = Corretor.listar("funcionarios.txt");
+					
 					if(corretores.size()==0){
 						System.out.println("Não existe Corretor Cadastrado!");
 					}else{
+						
 						for(String c : corretores){
 							System.out.println("Nome: "+ c);
 						}
@@ -63,6 +62,10 @@ public class MenuCadastrarCorretor {
 				
 				}
 			//	opcao="0";
+				System.out.println("Menu Cadastro de Corretor:\n" + "1 - Cadastrar\n"
+						+ "2 - Listar\n" + "3 - Alterar\n" + "4 - Excluir\n"
+						+ "5 - Voltar ao menu anterior  ");
+				
 				opcao=entrada.nextLine();
 			}while(!opcao.equals("5"));
 			
