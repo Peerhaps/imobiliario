@@ -50,9 +50,9 @@ public class CadastroImovel {
 		
 		//Trata Excessão informaçao errada para área
 		boolean repete = false;
+		System.out.println("Area do Imóvel");
 		do{
 			try{
-				System.out.println("Area do Imóvel");
 				area = ler.nextDouble();
 				ler.nextLine();
 				repete = false;
@@ -68,9 +68,9 @@ public class CadastroImovel {
 		tipo = ler.nextLine();
 		
 		//Trata Excessão informaçao errada para numero de quartos
+		System.out.println("Numero de quartos");
 		do{
 			try{
-				System.out.println("Numero de quartos");
 				numQ = ler.nextInt();
 				ler.nextLine();
 				repete = false;
@@ -82,9 +82,9 @@ public class CadastroImovel {
 		}while(repete == true);
 		
 		//Trata Excessão informaçao errada para numero de quartos
+		System.out.println("Numero de Banheiros");
 		do{
 			try{
-				System.out.println("Numero de Banheiros");
 				numB = ler.nextInt();
 				ler.nextLine();
 				repete = false;
@@ -116,9 +116,9 @@ public class CadastroImovel {
 		String vender = ler.nextLine();
 		if(vender.toUpperCase().equals("S")){
 			//Trata Excessão para valor de venda informada incorretamente
+			System.out.println("Digite o valor para Venda");
 			do{
 				try{
-					System.out.println("Digite o valor para Venda");
 					preco = ler.nextDouble();
 					ler.nextLine();
 					
@@ -133,6 +133,7 @@ public class CadastroImovel {
 					iV.setContrato(contrato);//Contrato
 					iV.setOcupado(false);//Ocupado
 					iV.setPreco(preco);//Preço
+					iV.setAVenda(true);
 					iV.salvar();
 					
 					repete = false;
@@ -149,9 +150,9 @@ public class CadastroImovel {
 		
 		if(alugar.toUpperCase().equals("S")){
 			//Trata Excessão para valor de mensalidade informada incorretamente
+			System.out.println("Digite o valor da Mensalidade");
 			do{
 				try{
-					System.out.println("Digite o valor da Mensalidade");
 					mensalidade = ler.nextDouble();
 					ler.nextLine();
 					
@@ -166,6 +167,7 @@ public class CadastroImovel {
 					iA.setContrato(contrato);//Contrato
 					iA.setOcupado(false);//Ocupado
 					iA.setMensalidade(mensalidade);
+					iA.setALocacao(true);
 					iA.salvar();
 					
 					repete = false;
