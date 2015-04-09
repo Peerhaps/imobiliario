@@ -5,8 +5,15 @@ public class Corretor extends Secretario {
 		return imovel.aVenda() && imovel.excluir();
 	}
 
-	public static void alugar(Cliente locatario, ImovelAluguel imovel) {
-
+	public static boolean alugar(Cliente locatario, ImovelAluguel imovel) {
+		if(!imovel.aLocacao())
+			return false;
+		
+		imovel.setALocacao(false);
+		imovel.setOcupado(false);
+		imovel.setLocatario(locatario.getNome());
+		
+		return true;
 	}
 
 	@Override
