@@ -7,67 +7,83 @@ import br.com.uniciss.imobiliaria.util.ValidaCpf;
 
 public class CadastroCorretor {
 	/*
-	 *LOCAL DE PREENCHIMENTO DE CADASTRO DE CORRETOR
+	 * LOCAL DE PREENCHIMENTO DE CADASTRO DE CORRETOR
 	 */
 	private static Scanner entrada;
-	private static Scanner entrada2;
-	private static Scanner entrada3;
 
 	public static void main(String[] args) {
 		entrada = new Scanner(System.in);
-		entrada2 = new Scanner(System.in);
-		entrada3 = new Scanner(System.in);
+
 		Corretor corretor = new Corretor();
-		
-		
 		System.out.println("Determine o nome: ");
-		corretor.setNome(entrada.toString());
-		entrada.hasNext();
-		
-		
+		String nome = entrada.toString();
+		corretor.setNome(nome);
+		entrada.nextLine();
+
 		System.out.println("Determine CPF: ");
-		String cpf = entrada2.nextLine();
-		
+		String cpf = entrada.nextLine();
+
 		while (!ValidaCpf.valido(cpf)) {
 			System.out.println("CPF inválido, informe novamente: ");
-			cpf = entrada2.nextLine();
+			cpf = entrada.nextLine();
+			entrada.nextLine();
 		}
+		corretor.setCpf(cpf);
 
 		
-		System.out.println("Determine o RG: ");
-		corretor.setRg(entrada.nextLine());
-		entrada.hasNext();
+		//System.out.println("Determine o RG: ");
+		int rg;
+		boolean erro=false;
+		do{
+		try {
+			System.out.println("Determine o RG: ");
+			rg = entrada.nextInt();
+			entrada.nextLine();
+			corretor.setRg(rg);
+			erro=false;
+			
+		} catch (Exception e) {
+			erro=true;
+		}
+		}while(erro);
 		
+		
+		
+			
 		System.out.println("Determine o Telefone: ");
-		corretor.setTelefone(entrada2.nextLine());
-		entrada2.hasNext();
-		
+		int telefone = entrada.nextInt();
+		corretor.setTelefone(String.valueOf(telefone));
+		entrada.nextLine();
+
 		System.out.println("Determine o endereco: ");
 		corretor.setEndereco(entrada.nextLine());
-		entrada.hasNext();
-		
+		entrada.nextLine();
+
 		System.out.println("Determine a Hora de Entrada: ");
-		int validaHora = entrada2.nextInt();
-		while ((validaHora>24)||(validaHora<0)){
+		int validaHora = entrada.nextInt();
+		entrada.nextLine();
+		while ((validaHora > 24) || (validaHora < 0)) {
 			System.out.println("Inserte uma hora correta: ");
 			validaHora = entrada.nextInt();
+			entrada.nextLine();
 		}
 		corretor.setHoraDeEntrada(String.valueOf(validaHora));
-		
-		
+
 		System.out.println("Determine a Hora de Saída: ");
-		int validaHora2 = entrada2.nextInt();
-		while ((validaHora2>24)||(validaHora2<0)){
+		int validaHora2 = entrada.nextInt();
+		entrada.nextLine();
+		while ((validaHora2 > 24) || (validaHora2 < 0)) {
 			System.out.println("Inserte uma hora correta: ");
 			validaHora2 = entrada.nextInt();
+			entrada.nextLine();
 		}
 		corretor.setHoraDeSaida(String.valueOf(validaHora));
-		
+
 		System.out.println("Determine a Senha do Corretor: ");
-		corretor.setSenha(entrada3.nextLine());
-		
+		corretor.setSenha(entrada.nextLine());
+		entrada.nextLine();
 		corretor.salvar();
-		
+
 	}
 
 }

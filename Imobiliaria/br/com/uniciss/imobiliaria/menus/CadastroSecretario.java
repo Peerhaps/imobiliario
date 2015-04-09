@@ -20,7 +20,8 @@ public class CadastroSecretario {
 		entrada2 = new Scanner(System.in);
 
 		System.out.println("Determine o nome: ");
-		secretario.setNome(entrada.nextLine());
+		secretario.setNome(entrada.toString());
+		entrada.hasNext();
 
 		System.out.println("Determine CPF:  ");
 		String cpf = entrada2.nextLine();
@@ -28,7 +29,7 @@ public class CadastroSecretario {
 			System.out.println("CPF inválido, informe novamente: ");
 			cpf = entrada2.nextLine();
 		}
-
+		secretario.setCpf(cpf);
 
 		System.out.println("Determine o RG: ");
 		secretario.setRg(entrada.nextLine());
