@@ -120,7 +120,7 @@ public class CadastroImovel {
 					iV.salvar();
 					
 					repete = false;
-				}catch(InputMismatchException | IOException e){
+				}catch(InputMismatchException e){
 					System.out.println("Valor Invalido\n");
 					ler.nextLine();
 					repete = true;	
@@ -153,7 +153,7 @@ public class CadastroImovel {
 					iA.salvar();
 					
 					repete = false;
-				}catch(InputMismatchException | IOException e){
+				}catch(InputMismatchException e){
 					System.out.println("Valor Invalido\n");
 					ler.nextLine();
 					repete = true;	 
