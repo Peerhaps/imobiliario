@@ -45,6 +45,8 @@ public class CadastroSecretario {
 		System.out.println("Determine a Hora de Saída: ");
 		secretario.setHoraDeSaida(entrada.nextLine());
 		
+		System.out.println("Determine a Senha do Secretario: ");
+		secretario.setSenha(entrada2.nextLine());
 		secretario.salvar();
 
 	}
