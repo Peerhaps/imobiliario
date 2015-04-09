@@ -1,1 +1,0 @@
-{"1":{"Endereço":"Guilherme Guzzo","Tipo":"Apartamento","Ocupado":false,"Contrato":"null null","Área":50,"Mensalidade":500,"Número de quartos":2,"Tem garagem":false,"Número de banheiros":1},"0":{"Endereço":"sadsd","Tipo":"231","Ocupado":false,"Contrato":"null null dfdf","Área":2,"Mensalidade":32,"Número de quartos":213,"Tem garagem":false,"Número de banheiros":123}}
