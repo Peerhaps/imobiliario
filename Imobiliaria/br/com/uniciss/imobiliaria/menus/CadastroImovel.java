@@ -133,7 +133,7 @@ public class CadastroImovel {
 					iV.setContrato(contrato);//Contrato
 					iV.setOcupado(false);//Ocupado
 					iV.setPreco(preco);//Preço
-					iV.setAVenda(true);
+					iV.setAVenda(true); 
 					iV.salvar();
 					
 					repete = false;
