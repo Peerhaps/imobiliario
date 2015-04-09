@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import br.com.uniciss.imobiliaria.geral.Cliente;
 import br.com.uniciss.imobiliaria.geral.ImovelAluguel;
 import br.com.uniciss.imobiliaria.geral.ImovelVenda;
 
@@ -24,10 +25,25 @@ public class CadastroImovel {
 	/*
 	 * Metodo que efetua o cadastro de um novo imovel
 	 */
-	public void cadastraImovel(){
+	public void cadastraImovel() throws IOException{
 		    
 		System.out.println("Nome do proprietário");
-		nome = ler.nextLine();
+		
+		boolean cont=false;
+		Cliente cliente=new Cliente();
+		
+		do{
+			nome = ler.nextLine();
+			
+			if(cliente.existe("clientes.txt", nome)){
+				System.out.println("CLiente Existe");
+				cont=false;
+			}else{
+				System.out.println("Não Existe");
+				cont=true;
+			}
+		}while(cont == true);
+		
 		
 		System.out.println("Endereço do Imóvel");
 		end = ler.nextLine();
