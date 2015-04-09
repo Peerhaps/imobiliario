@@ -1,6 +1,8 @@
 package br.com.uniciss.imobiliaria.geral;
 public abstract class Autenticavel extends Pessoa {
 	
+	public abstract String getFuncao();
+	
 	@Override
 	public String getArquivo() {
 		return "funcionarios.txt";

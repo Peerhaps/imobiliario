@@ -53,4 +53,9 @@ public class Secretario extends Autenticavel {
 
 	}
 
+	@Override
+	public String getFuncao() {
+		return "secretario";
+	}
+
 }

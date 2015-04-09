@@ -7,4 +7,9 @@ public class Corretor extends Secretario {
 	public static void alugar(Cliente locatario, ImovelAluguel imovel) {
 
 	}
+	
+	@Override
+	public String getFuncao() {
+		return "corretor";
+	}
 }
