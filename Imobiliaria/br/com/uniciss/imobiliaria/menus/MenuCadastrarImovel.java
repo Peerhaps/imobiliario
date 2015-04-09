@@ -41,9 +41,7 @@ public class MenuCadastrarImovel {
 			
 			case "3":
 				System.out.println("Alterar Imovel");
-				System.out.println("Digite o id do Imovel");
-				id=ler.nextLine();
-				
+				EditarImovel.editarImovel();
 			break;
 				
 			case "4":
@@ -52,7 +50,6 @@ public class MenuCadastrarImovel {
 				id=ler.nextLine();
 				
 				break;
-				
 			case "5":
 				System.out.println("Voltar ao menu anterior");
 				return;
