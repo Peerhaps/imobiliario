@@ -49,7 +49,12 @@ public class MenuCadastrarCliente {
 				break;
 
 			case "4":
-				System.out.println("Excluir Cliente");
+				System.out.print("Nome do cliente: ");
+				Cliente cliente = new Cliente();
+				cliente.setNome(entrada.nextLine());
+				
+				cliente.excluir();
+
 
 				break;
 
