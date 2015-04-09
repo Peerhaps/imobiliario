@@ -13,9 +13,9 @@ public class AreaCorretor {
 				+ "2-Receber Mensalidade\n"
 				+ "3-Menu Imóveis\n"
 				+ "4-Agendar Visitas\n"
-				+ "6-Vender Imóvel\n"
-				+ "7-Alugar Imóvel\n"
-				+ "8-Sair");
+				+ "5-Vender Imóvel\n"
+				+ "6-Alugar Imóvel\n"
+				+ "7-Sair");
 		/**
 		 * Switch com as opcoes de menu;
 		 */
@@ -37,10 +37,10 @@ public class AreaCorretor {
 				
 				break;
 			case "5":
-				System.out.println("OPCAO DESABILITADA");
+				Corretor corretor = new Corretor();	
+				corretor.vender();
 				break;	
 			case "6":
-				
 			//	Corretor.vender(imovel, comprador);
 				break;
 			case "7":
