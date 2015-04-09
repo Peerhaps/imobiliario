@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import br.com.uniciss.imobiliaria.geral.Secretario;
-import br.com.uniciss.imobiliaria.util.ValidadorCpf;
+import br.com.uniciss.imobiliaria.util.ValidaCpf;
 
 public class CadastroSecretario {
 	/*
@@ -24,7 +24,7 @@ public class CadastroSecretario {
 
 		System.out.println("Determine CPF:  ");
 		String cpf = entrada2.nextLine();
-		while (!ValidadorCpf.validaCpf(cpf)) {
+		while (!ValidaCpf.valido(cpf)) {
 			System.out.println("CPF inválido, informe novamente: ");
 			cpf = entrada2.nextLine();
 		}

@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import br.com.uniciss.imobiliaria.geral.Cliente;
-import br.com.uniciss.imobiliaria.util.ValidadorCpf;
+import br.com.uniciss.imobiliaria.util.ValidaCpf;
 
 public class EditarCliente {
 	/**
@@ -35,7 +35,7 @@ public class EditarCliente {
 		entrada2 = new Scanner(System.in);
 
 		String cpf = entrada2.nextLine();
-		while (!ValidadorCpf.validaCpf(cpf)) {
+		while (!ValidaCpf.valido(cpf)) {
 			System.out.println("CPF inválido, informe novamente: ");
 			cpf = entrada2.nextLine();
 		}
