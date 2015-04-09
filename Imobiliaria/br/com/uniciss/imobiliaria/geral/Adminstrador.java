@@ -6,9 +6,4 @@ public class Adminstrador extends Autenticavel {
 	public void cadastrarCorretor(Corretor corretor) {
 	
 	}
-
-	@Override
-	protected String getArquivo() {
-		return null;
-	}
 }
