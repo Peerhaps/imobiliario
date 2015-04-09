@@ -43,7 +43,7 @@ public class EditarCliente {
 		cliente.setCpf(cpf);
 
 		System.out.println("Determine o RG do Cliente: ");
-		cliente.setRg(entrada.nextInt());
+		cliente.setRg(entrada.nextInt()); 
 
 		System.out.println("Determine o Telefone do Cliente: ");
 		cliente.setTelefone(entrada2.nextLine());
