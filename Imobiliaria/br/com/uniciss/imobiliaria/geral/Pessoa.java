@@ -48,10 +48,10 @@ public abstract class Pessoa extends Dado {
 	/**
 	 * Retorna o RG do cliente.
 	 * 
-	 * @return String - RG do cliente.
+	 * @return Int - RG do cliente.
 	 */
-	public String getRg() {
-		return this.dados.getString("Nome");
+	public int getRg() {
+		return this.dados.getInt("RG");
 	}
 
 	/**
@@ -60,7 +60,7 @@ public abstract class Pessoa extends Dado {
 	 * @param rg
 	 *            String - Novo RG.
 	 */
-	public void setRg(String rg) {
+	public void setRg(int rg) {
 		this.dados.put("RG", rg);
 	}
 
