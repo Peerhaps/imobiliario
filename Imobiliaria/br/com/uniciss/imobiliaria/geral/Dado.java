@@ -39,8 +39,11 @@ public abstract class Dado {
 
 	/**
 	 * Checa se há registro o registro com a chave "nome".
-	 * @param arquivo String - Arquivo a ser verificado.
-	 * @param nome String - valor da chave.
+	 * 
+	 * @param arquivo
+	 *            String - Arquivo a ser verificado.
+	 * @param nome
+	 *            String - valor da chave.
 	 * @return boolean - o registro existe no arquivo?
 	 * @throws IOException
 	 */
@@ -76,14 +79,14 @@ public abstract class Dado {
 			JSONObject contas = getDadosConteudo(this.getArquivo());
 			contas.remove(this.getKey());
 			IO.setConteudoDoArquivo(getArquivo(), contas.toString());
-			
+
 			return true;
 		} catch (IOException e) {
 			return false;
 		}
 	}
 
-	private static JSONObject getDadosConteudo(String arquivo)
+	protected static JSONObject getDadosConteudo(String arquivo)
 			throws IOException {
 		String contas = IO.getConteudoDoArquivo(arquivo);
 		return new JSONObject(contas);
