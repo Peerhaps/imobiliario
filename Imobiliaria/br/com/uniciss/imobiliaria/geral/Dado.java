@@ -12,71 +12,75 @@ import br.com.uniciss.imobiliaria.util.IO;
 public abstract class Dado {
 
 	protected JSONObject dados = new JSONObject();
-	protected String arquivo;
 
-	/**
-	 * Retorna o nome do dado.
-	 * 
-	 * @return String - Nome do dado.
-	 */
-	public String getNome() {
-		return this.dados.getString("Nome");
-	}
+	protected abstract String getKey();
 
-	/**
-	 * Edita o nome do dado.
-	 * 
-	 * @param nome
-	 *            String - Novo nome.
-	 */
-	public void setNome(String nome) {
-		this.dados.put("Nome", nome);
-	}
+	protected abstract String getArquivo();
 
 	/**
 	 * Grava os dados do objeto.
 	 * 
 	 * @return boolean Gravação feita com sucesso?
+	 * @throws IOException
 	 */
 	public boolean salvar() {
 		try {
-			String conteudo = IO.getConteudoDoArquivo(this.arquivo);
-			JSONObject registros = new JSONObject(conteudo);
+			JSONObject contas = getDadosConteudo(this.getArquivo());
 
-			registros.put(this.getNome(), this.dados);
+			contas.put(this.getKey(), this.dados);
 
-			IO.setConteudoDoArquivo(this.arquivo, registros.toString());
+			IO.setConteudoDoArquivo(this.getArquivo(), contas.toString());
 
 			return true;
 		} catch (IOException e) {
 			return false;
 		}
 	}
-	
-	public static boolean existe(String arquivo, String nome) throws IOException {
+
+	public static boolean existe(String arquivo, String nome)
+			throws IOException {
 		List<String> nomes = listar(arquivo);
 		return nomes.contains(nome);
 	}
 
-	public static List<String> listar(String arquivo, String atributo) throws IOException {
-		String clientesString = IO.getConteudoDoArquivo(arquivo);
-		JSONObject clientes = new JSONObject(clientesString);
+	public static List<String> listar(String arquivo, String atributo)
+			throws IOException {
+		JSONObject contas = getDadosConteudo(arquivo);
 
 		List<String> lista = new ArrayList<String>();
 
-		Iterator<String> keys = clientes.keys();
+		Iterator<String> keys = contas.keys();
 
 		while (keys.hasNext()) {
 			String key = keys.next();
-			JSONObject oClientes = clientes.getJSONObject(key);
+			JSONObject oClientes = contas.getJSONObject(key);
 			lista.add(oClientes.getString(atributo));
 		}
 
 		return lista;
 	}
-	
+
 	public static List<String> listar(String arquivo) throws IOException {
 		return listar(arquivo, "Nome");
+	}
+
+	public boolean excluir() {
+		try {
+			JSONObject contas = getDadosConteudo(this.getArquivo());
+			contas.remove(this.getKey());
+			IO.setConteudoDoArquivo(getArquivo(), contas.toString());
+			
+			return true;
+		} catch (IOException e) {
+			return false;
+		}
+	}
+
+	private static JSONObject getDadosConteudo(String arquivo)
+			throws IOException {
+		JSONObject contas = getDadosConteudo(arquivo);
+
+		return contas;
 	}
 
 }

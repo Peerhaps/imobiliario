@@ -1,5 +1,6 @@
 package br.com.uniciss.imobiliaria.menus;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -116,11 +117,10 @@ public class CadastroImovel {
 					iV.setContrato(contrato);//Contrato
 					iV.setOcupado(false);//Ocupado
 					iV.setPreco(preco);//Preço
-					iV.setNome(nome);
 					iV.salvar();
 					
 					repete = false;
-				}catch(InputMismatchException e){
+				}catch(InputMismatchException | IOException e){
 					System.out.println("Valor Invalido\n");
 					ler.nextLine();
 					repete = true;	
@@ -150,11 +150,10 @@ public class CadastroImovel {
 					iA.setContrato(contrato);//Contrato
 					iA.setOcupado(false);//Ocupado
 					iA.setMensalidade(mensalidade);
-					iA.setNome(nome);
 					iA.salvar();
 					
 					repete = false;
-				}catch(InputMismatchException e){
+				}catch(InputMismatchException | IOException e){
 					System.out.println("Valor Invalido\n");
 					ler.nextLine();
 					repete = true;	 

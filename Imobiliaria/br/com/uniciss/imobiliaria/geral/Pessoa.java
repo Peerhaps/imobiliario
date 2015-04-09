@@ -1,7 +1,31 @@
 package br.com.uniciss.imobiliaria.geral;
 
 public abstract class Pessoa extends Dado {
+ 
+	@Override
+	protected String getKey() {
+		return this.getNome();
+	}
+	
+	/**
+	 * Retorna o nome do dado.
+	 * 
+	 * @return String - Nome do dado.
+	 */
+	public String getNome() {
+		return this.dados.getString("Nome");
+	}
 
+	/**
+	 * Edita o nome do dado.
+	 * 
+	 * @param nome
+	 *            String - Novo nome.
+	 */
+	public void setNome(String nome) {
+		this.dados.put("Nome", nome);
+	}
+	
 	/**
 	 * Retorna o CPF do cliente.
 	 * 

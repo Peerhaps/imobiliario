@@ -1,7 +1,9 @@
 package br.com.uniciss.imobiliaria.util;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,23 +17,40 @@ public class IO {
 			throws IOException {
 		StringBuilder conteudo = new StringBuilder();
 
-		InputStream is = new FileInputStream(nomeDoArquivo);
+		InputStream is;
+		try {
+			is = new FileInputStream(nomeDoArquivo);
 
-		Scanner entrada = new Scanner(is);
+			Scanner entrada = new Scanner(is);
 
-		while (entrada.hasNextLine())
-			conteudo.append(entrada.nextLine());
+			while (entrada.hasNextLine())
+				conteudo.append(entrada.nextLine());
 
-		entrada.close();
-		is.close();
+			entrada.close();
+			is.close();
 
-		return conteudo.toString();
+			return conteudo.toString();
+
+		} catch (FileNotFoundException e) {
+			File file = new File(nomeDoArquivo);
+			file.createNewFile();
+			setConteudoDoArquivo(nomeDoArquivo, "{}");
+			return "{}";
+		}
 	}
 
 	public static void setConteudoDoArquivo(String nomeDoArquivo,
 			String conteudo) throws IOException {
-		Writer writer = new BufferedWriter(new OutputStreamWriter(
-				new FileOutputStream(nomeDoArquivo)));
+		Writer writer;
+		try {
+			writer = new BufferedWriter(new OutputStreamWriter(
+					new FileOutputStream(nomeDoArquivo)));
+		} catch (FileNotFoundException e) {
+			File file = new File(nomeDoArquivo);
+			file.createNewFile();
+			setConteudoDoArquivo(nomeDoArquivo, conteudo);
+			return;
+		}
 
 		writer.write(conteudo);
 		writer.close();

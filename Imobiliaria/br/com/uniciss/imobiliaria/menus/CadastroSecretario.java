@@ -1,5 +1,6 @@
 package br.com.uniciss.imobiliaria.menus;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import br.com.uniciss.imobiliaria.geral.Secretario;
@@ -12,7 +13,7 @@ public class CadastroSecretario {
 	private static Scanner entrada;
 	private static Scanner entrada2;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		System.out.println("Cadastro Secretario\n");
 		Secretario secretario = new Secretario();
 		entrada = new Scanner(System.in);

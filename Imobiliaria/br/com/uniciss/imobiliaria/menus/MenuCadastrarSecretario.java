@@ -1,11 +1,12 @@
 package br.com.uniciss.imobiliaria.menus;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MenuCadastrarSecretario {
 private static Scanner entrada;
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		System.out.println("Menu Cadastro de Secretario:\n" + "1 - Cadastrar\n"
 				+ "2 - Listar\n" + "3 - Alterar\n" + "4 - Excluir\n"
 				+ "5 - Voltar ao menu anterior  ");

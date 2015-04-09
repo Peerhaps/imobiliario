@@ -1,16 +1,41 @@
 package br.com.uniciss.imobiliaria.geral;
 
+import java.io.IOException;
+
 import org.json.JSONArray;
+import org.json.JSONObject;
+
+import br.com.uniciss.imobiliaria.util.IO;
 
 public class Imovel extends Dado {
-	
-	//public Cliente proprietario
-	
-	public Imovel() {
-		this.arquivo = "imoveis.txt";
+
+	private int id = -1;
+
+	@Override
+	public boolean salvar() {
+		if (id < 0) {
+			try {
+				String conteudo = IO.getConteudoDoArquivo(this.getArquivo());
+				JSONObject registros = new JSONObject(conteudo);
+				this.id = registros.length();
+			} catch (IOException e) {
+				e.printStackTrace();
+				return false;
+			}
+		}
+
+		return super.salvar();
 	}
-	// 
-	
+
+	@Override
+	protected String getArquivo() {
+		return "imoveis.txt";
+	}
+
+	protected String getKey() {
+		return String.valueOf(id);
+	}
+
 	/**
 	 * Retorna o endereço do imóvel.
 	 * 
@@ -29,9 +54,10 @@ public class Imovel extends Dado {
 	public void setEndereco(String endereco) {
 		this.dados.put("Endereço", endereco);
 	}
-	
+
 	/***
 	 * Retorna a área total do imóvel.
+	 * 
 	 * @return double área do imóvel
 	 */
 	public double getArea() {
@@ -40,7 +66,9 @@ public class Imovel extends Dado {
 
 	/***
 	 * Editar área do imóvel.
-	 * @param area area Área do imóvel
+	 * 
+	 * @param area
+	 *            area Área do imóvel
 	 */
 	public void setArea(double area) {
 		this.dados.put("Área", area);
@@ -109,7 +137,7 @@ public class Imovel extends Dado {
 	public void setAVenda(boolean aVenda) {
 		this.dados.put("A venda", aVenda);
 	}
-	
+
 	public boolean aLocacao() {
 		return this.dados.getBoolean("A locação");
 	}

@@ -1,11 +1,13 @@
 package br.com.uniciss.imobiliaria.geral;
+
 public class Secretario extends Autenticavel {
-		
+
 	private String horaDeEntrada;
 	private String horaDeSaida;
-	
-	public Secretario() {
-		this.arquivo = "secretarios.txt";
+
+	@Override
+	protected String getArquivo() {
+		return "secretarios.txt";
 	}
 
 	public String getHoraDeEntrada() {
@@ -55,4 +57,5 @@ public class Secretario extends Autenticavel {
 	public void agendarVisita(Cliente cliente, Imovel imovel) {
 
 	}
+
 }

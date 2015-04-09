@@ -1,21 +1,14 @@
 package br.com.uniciss.imobiliaria.geral;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-
-import org.json.JSONObject;
-
-import br.com.uniciss.imobiliaria.util.IO;
 
 public class Cliente extends Pessoa {
 
 	private List<Imovel> imoveisAluguelVenda;
 	private List<ImovelAluguel> imoveisAlugados;
-
-	public Cliente() {
-		this.arquivo = "clientes.txt";
+	
+	protected String getArquivo() {
+		return "clientes.txt";
 	}
 
 
