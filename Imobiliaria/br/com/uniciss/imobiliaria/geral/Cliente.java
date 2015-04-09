@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Cliente extends Pessoa {
 
-	private List<Imovel> imoveisAluguelVenda;
-	private List<ImovelAluguel> imoveisAlugados;
+	private List<Integer> imoveisAluguelVenda;
+	private List<Integer> imoveisAlugados;
 	
 	protected String getArquivo() {
 		return "clientes.txt";
@@ -42,7 +42,7 @@ public class Cliente extends Pessoa {
 	}
 
 	public void adicionarImovel(Imovel imovel) {
-
+		imovel
 	}
 
 	public void removerImovel(Imovel imovel) {
