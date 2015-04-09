@@ -34,13 +34,13 @@ public class AreaCorretor {
 				MenuCadastrarImovel.main(null);
 				break;
 			case "4":
-				System.out.println("OPCAO DESABILITADA");
+				
 				break;
 			case "5":
-				System.out.println("OPCAO DESABILITADA");
+				Corretor corretor = new Corretor();	
+				corretor.vender();
 				break;	
 			case "6":
-				
 			//	Corretor.vender(imovel, comprador);
 				break;
 			case "7":
