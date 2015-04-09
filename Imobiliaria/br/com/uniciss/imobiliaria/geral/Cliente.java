@@ -1,11 +1,12 @@
 package br.com.uniciss.imobiliaria.geral;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Cliente extends Pessoa {
 
-	private List<Integer> imoveisAluguelVenda;
-	private List<Integer> imoveisAlugados;
+	private Set<Integer> imoveisAluguelVenda = new HashSet<Integer>();
+	private Set<Integer> imoveisAlugados = new HashSet<Integer>();
 	
 	protected String getArquivo() {
 		return "clientes.txt";
@@ -42,11 +43,17 @@ public class Cliente extends Pessoa {
 	}
 
 	public void adicionarImovel(Imovel imovel) {
-		imovel
+		int chave = Integer.parseInt(imovel.getKey());
+		
+		if(!this.imoveisAluguelVenda.contains(chave))
+			this.imoveisAluguelVenda.add(chave);
 	}
 
 	public void removerImovel(Imovel imovel) {
-
+		int chave = Integer.parseInt(imovel.getKey());
+		
+		if(this.imoveisAluguelVenda.contains(chave))
+			imoveisAluguelVenda.remove(chave);
 	}
 
 	public void alugarImovel(ImovelAluguel imovel) {
