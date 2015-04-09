@@ -32,7 +32,7 @@ public class CadastroImovel {
 		boolean cont=false;
 		Cliente cliente=new Cliente();
 		
-		do{
+		do{  
 			nome = ler.nextLine();
 			
 			if(cliente.existe("clientes.txt", nome)){
