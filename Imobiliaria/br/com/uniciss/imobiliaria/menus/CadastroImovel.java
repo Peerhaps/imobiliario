@@ -16,11 +16,11 @@ public class CadastroImovel {
 	int numQ;  
 	int numB;
 	boolean possuiGaragem;
-	String contrato;
+	String contrato = "";
 	double preco;
 	double mensalidade;
 	String nome;
-	String linha;
+	String linha = "";
 	
 	/*
 	 * Metodo que efetua o cadastro de um novo imovel
@@ -133,7 +133,8 @@ public class CadastroImovel {
 					iV.setContrato(contrato);//Contrato
 					iV.setOcupado(false);//Ocupado
 					iV.setPreco(preco);//Preço
-					iV.setAVenda(true); 
+					iV.setAVenda(true);
+					//iV.setPropietario;
 					iV.salvar();
 					
 					cliente.adicionarImovel(iV);
@@ -170,10 +171,9 @@ public class CadastroImovel {
 					iA.setOcupado(false);//Ocupado
 					iA.setMensalidade(mensalidade);
 					iA.setALocacao(true);
+					//iA.setPropeitario//
 					iA.salvar();
-					
-					cliente.adicionarImovel(iA);
-					
+											
 					repete = false;
 				}catch(InputMismatchException e){
 					System.out.println("Valor Invalido\n");
