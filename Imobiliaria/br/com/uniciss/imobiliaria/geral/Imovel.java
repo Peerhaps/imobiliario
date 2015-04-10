@@ -14,11 +14,11 @@ import br.com.uniciss.imobiliaria.util.RegistroInexistente;
 public class Imovel extends Dado {
 
 	private int id = -1;
-	
+
 	public String getProprietario() {
 		return this.dados.getString("Proprietário");
 	}
-	
+
 	public void setProprietario(String nomeProprietario) {
 		this.dados.put("Proprietário", nomeProprietario);
 	}
@@ -47,7 +47,7 @@ public class Imovel extends Dado {
 	protected String getKey() {
 		return String.valueOf(id);
 	}
-	
+
 	public void setKey(int key) {
 		this.id = key;
 	}
@@ -138,17 +138,19 @@ public class Imovel extends Dado {
 		this.dados.put("Ocupado", ocupado);
 	}
 
-	public JSONArray getVisitasAgendadas() {
-		return this.dados.getJSONArray("Visitas agendadas");
-	}
-
 	public void setVisitasAgendadas(JSONArray visitasAgendadas) {
 		this.dados.put("Venda e aluguel", visitasAgendadas);
 	}
-	
+
 	public boolean agendarVisita(String nomeCliente, int dia, int mes, int ano) {
-		//this.dados.ge("Visitas agendadas").j
-		
+		String data = dia + "/" + mes + "/" + ano;
+
+		if (this.dados.getJSONObject("Visitas agendadas").has(data)) {
+			return false;
+		}
+
+		this.dados.accumulate("Visitas agendadas", data);
+
 		return true;
 	}
 
@@ -167,9 +169,8 @@ public class Imovel extends Dado {
 	public void setALocacao(boolean aLocacao) {
 		this.dados.put("A locação", aLocacao);
 	}
-	
-	public static List<String> listarImoveis()
-			throws IOException {
+
+	public static List<String> listarImoveis() throws IOException {
 		JSONObject contas = getDadosConteudo("imoveis.txt");
 
 		List<String> lista = new ArrayList<String>();
@@ -184,13 +185,13 @@ public class Imovel extends Dado {
 
 		return lista;
 	}
-	
-	@Override 
+
+	@Override
 	public boolean excluir() {
 		try {
-			if(!this.existe())
+			if (!this.existe())
 				throw new RegistroInexistente();
-			
+
 			JSONObject contas = getDadosConteudo(this.getArquivo());
 			contas.remove(this.getKey());
 			IO.setConteudoDoArquivo(getArquivo(), contas.toString());
@@ -200,8 +201,8 @@ public class Imovel extends Dado {
 			return false;
 		}
 	}
-	
-	public boolean existe(){
+
+	public boolean existe() {
 		try {
 			this.dados = getDadosConteudo(getArquivo()).getJSONObject(getKey());
 			return true;
@@ -209,15 +210,15 @@ public class Imovel extends Dado {
 			return false;
 		}
 	}
-	
+
 	public String getLocatario() {
 		return this.dados.getString("Locatário");
 	}
-	
+
 	public void setLocatario(String nomeLocatario) {
 		this.dados.put("Locatário", nomeLocatario);
 	}
-	
+
 	public double getMensalidade() {
 		return this.dados.getDouble("Mensalidade");
 	}
@@ -233,7 +234,7 @@ public class Imovel extends Dado {
 	public void setFimContrato(String fimContrato) {
 		this.dados.put("Fim do contrato", fimContrato);
 	}
-	
+
 	public double getPreco() {
 		return this.dados.getDouble("Preço");
 	}
