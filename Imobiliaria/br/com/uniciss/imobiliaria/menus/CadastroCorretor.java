@@ -120,7 +120,7 @@ public class CadastroCorretor {
 			senha = entrada.nextLine();
 			corretor.setSenha(senha);
 
-		} while (senha.equals(""));
+		} while (senha.equals(null));
 		corretor.salvar();
 		return;
 	}

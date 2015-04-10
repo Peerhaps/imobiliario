@@ -3,7 +3,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
-import br.com.uniciss.imobiliaria.geral.Cliente;
 import br.com.uniciss.imobiliaria.geral.Corretor;
 public class MenuCadastrarCorretor {
 
@@ -45,7 +44,7 @@ public class MenuCadastrarCorretor {
 				
 				case "3":
 					System.out.println("Alterar Corretor");
-					
+				
 				break;
 					
 				case "4":

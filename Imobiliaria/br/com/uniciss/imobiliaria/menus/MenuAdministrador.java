@@ -1,11 +1,12 @@
 package br.com.uniciss.imobiliaria.menus;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MenuAdministrador {
 private static Scanner entrada;
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		System.out.println("Menu Administrador:\n" + "1 - Cadastrar Corretor\n"
 				+ "2 - Cadastrar Secretario\n" + 
 				"3 - Sair ");
@@ -21,13 +22,13 @@ private static Scanner entrada;
 			switch (opcao){
 			case "1":
 				System.out.println("Cadastrar novo Corretor");
-				CadastroCorretor.main(null);
+				MenuCadastrarCorretor.main(null);
 				
 			break;
 			
 			case "2":
 				System.out.println("Cadastrar Secretario");
-				CadastroSecretario.main(null);
+				MenuCadastrarSecretario.main(null);
 			break;
 			
 			case "3":
