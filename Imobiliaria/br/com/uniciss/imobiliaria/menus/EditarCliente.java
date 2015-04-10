@@ -8,26 +8,28 @@ import br.com.uniciss.imobiliaria.util.ValidaCpf;
 
 public class EditarCliente {
 	/**
-	 * Classe para editar clientes 
+	 * Classe para editar clientes
 	 */
 	private static Scanner entrada;
+
 	/**
-	 * Metodo editarCliente, feito para editar clientes pelo nome 
+	 * Metodo editarCliente, feito para editar clientes pelo nome
+	 * 
 	 * @throws IOException
 	 */
-	public static void editarCliente() throws IOException{
-		
+	public static void editarCliente() throws IOException {
+
 		System.out.println("Determine o nome do Cliente: ");
-	    
+
 		Cliente cliente = new Cliente();
 		entrada = new Scanner(System.in);
-	
-		String nome=entrada.nextLine();
-		if(!Cliente.existe("clientes.txt", nome)) {
+
+		String nome = entrada.nextLine();
+		if (!Cliente.existe("clientes.txt", nome)) {
 			System.out.println("Cliente inexistente.");
 			return;
 		}
-		
+
 		System.out.println("Determine CPF: ");
 		/**
 		 * Preenchimento do cpf com validação
@@ -78,18 +80,17 @@ public class EditarCliente {
 		} while (erro);
 
 		System.out.println("Determine o endereco: ");
-		cliente.setEndereco(entrada.nextLine());
-		entrada.nextLine();
+		Scanner entrada2 = new Scanner(System.in);
+		String endereco = entrada2.nextLine();
+		cliente.setEndereco(endereco);
 
 		System.out.println("Determine o numero da conta Bancaria: ");
 		String bancario = entrada.nextLine();
 		entrada.nextLine();
 		cliente.setNumeroContaBancaria(Integer.parseInt(bancario));
 
-
 		cliente.salvar();
 		return;
 	}
-	
-	
+
 }

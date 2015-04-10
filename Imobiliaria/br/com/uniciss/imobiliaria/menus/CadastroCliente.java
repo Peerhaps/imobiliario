@@ -74,8 +74,9 @@ public class CadastroCliente {
 		} while (erro);
 
 		System.out.println("Determine o endereco: ");
-		cliente.setEndereco(entrada.nextLine());
-		entrada.nextLine();
+		Scanner entrada2 = new Scanner(System.in);
+		String endereco = entrada2.nextLine();
+		cliente.setEndereco(endereco);
 
 		System.out.println("Determine o numero da conta Bancaria: ");
 		String bancario = entrada.nextLine();

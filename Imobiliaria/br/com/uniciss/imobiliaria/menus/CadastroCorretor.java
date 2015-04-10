@@ -72,8 +72,9 @@ public class CadastroCorretor {
 		} while (erro);
 
 		System.out.println("Determine o endereco: ");
-		corretor.setEndereco(entrada.nextLine());
-		entrada.nextLine();
+		Scanner entrada2 = new Scanner(System.in);
+		String endereco = entrada2.nextLine();
+		corretor.setEndereco(endereco);
 
 		int validaHora; // Variavel que vai servir de auxilio para validar a
 						// hora de entrada e saida do trabalho
