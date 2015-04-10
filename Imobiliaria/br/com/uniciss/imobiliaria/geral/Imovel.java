@@ -146,7 +146,9 @@ public class Imovel extends Dado {
 		this.dados.put("Venda e aluguel", visitasAgendadas);
 	}
 	
-	public boolean agendarVisita(Cliente cliente, int dia, int mes, int ano) {
+	public boolean agendarVisita(String nomeCliente, int dia, int mes, int ano) {
+		
+		
 		return true;
 	}
 
