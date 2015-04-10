@@ -1,6 +1,5 @@
 package br.com.uniciss.imobiliaria.menus;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 import br.com.uniciss.imobiliaria.Programa;
@@ -11,7 +10,9 @@ private static Scanner entrada;
 	public static void main(String[] args) throws Exception {
 		System.out.println("Menu Administrador:\n" + "1 - Cadastrar Corretor\n"
 				+ "2 - Cadastrar Secretario\n" + 
-				"3 - Sair ");
+				"3 - Menu Secretario\n"
+				+ "4 - Menu Corretor\n"
+				+ "5 - Sair\n ");
 	
 
 		String opcao="";
@@ -34,6 +35,14 @@ private static Scanner entrada;
 			break;
 			
 			case "3":
+				System.out.println("Menu Secretario");
+				AreaSecretario.areaSecretario();
+				break;
+			case "4":
+				System.out.println("Menu Corretor");
+				AreaCorretor.areaCorretor();
+				break;
+			case "5":
 				System.out.println("Sair");
 				System.out.println();
 				Programa.main(null);
@@ -45,7 +54,7 @@ private static Scanner entrada;
 			}
 			//opcao="0";
 			opcao=entrada.nextLine();
-		}while(!opcao.equals("3"));
+		}while(!opcao.equals("5"));
 		
 		
 		
