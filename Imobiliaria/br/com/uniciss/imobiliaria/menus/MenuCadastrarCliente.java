@@ -66,7 +66,6 @@ public class MenuCadastrarCliente {
 				break;
 
 			}
-			// opcao="0";
 			opcao = entrada.nextLine();
 		} while (!opcao.equals("5"));
 
