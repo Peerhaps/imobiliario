@@ -153,6 +153,13 @@ public class Imovel extends Dado {
 
 		return true;
 	}
+	
+	public boolean desmarcarVisita(int dia, int mes, int ano) {
+		String data = dia + "/" + mes + "/" + ano;
+	
+		return this.dados.getJSONObject("Visitas agendadas").remove(data) != null;
+		
+	}
 
 	public boolean aVenda() {
 		return this.dados.getBoolean("A venda");
