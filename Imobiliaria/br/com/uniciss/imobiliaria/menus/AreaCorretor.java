@@ -102,7 +102,7 @@ public class AreaCorretor {
 							System.out.println("Locatario:"+nomeLocatorio);
 							System.out.println("Id Imovel alugado:"+id);
 						}else{
-							System.out.println("Imovel não esta para alugar");
+							System.out.println("Imovel não esta para disponivel para alugar");
 						}
 					}else{
 						System.out.println("Imovel Inexistente");
