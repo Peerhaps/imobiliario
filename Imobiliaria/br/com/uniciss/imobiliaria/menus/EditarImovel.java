@@ -15,11 +15,11 @@ public class EditarImovel {
 	 */
 	
 	/**
-	 * Metodo editarCliente, feito para editar clientes pelo nome 
+	 * Metodo editarImovel, feito para editar imovel pelo id 
 	 * @throws IOException 
 	 */
 	public static void editarImovel() throws IOException{
-		
+	
 		Scanner ler = new Scanner(System.in);
 		
 		System.out.println("Digite o id do Imovel");
