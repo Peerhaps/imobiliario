@@ -5,8 +5,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import br.com.uniciss.imobiliaria.geral.Cliente;
-import br.com.uniciss.imobiliaria.geral.ImovelAluguel;
-import br.com.uniciss.imobiliaria.geral.ImovelVenda;
+import br.com.uniciss.imobiliaria.geral.Imovel;
 
 public class CadastroImovel {   
 	Scanner ler=new Scanner(System.in);
@@ -110,33 +109,21 @@ public class CadastroImovel {
 			contrato=contrato+" "+linha;
 			linha = ler.nextLine();
 		}while(!linha.toLowerCase().equals("sair"));
-		
+
+		boolean aLocacao = false;
+		boolean aVenda = false;
 		
 		System.out.println("Deseja colocar a Venda? - S-Sim/N-Não");
 		String vender = ler.nextLine();
 		if(vender.toUpperCase().equals("S")){
+			aVenda=true;
+			
 			//Trata Excessão para valor de venda informada incorretamente
 			System.out.println("Digite o valor para Venda");
 			do{
 				try{
 					preco = ler.nextDouble();
 					ler.nextLine();
-					
-					//Intancia Imovel Venda e seta Valores 
-					ImovelVenda iV = new ImovelVenda();
-					iV.setEndereco(end);//Endereço
-					iV.setArea(area);//Área
-					iV.setTipo(tipo);//Tipo
-					iV.setNumeroDeQuartos(numQ);//Numero De Quartos
-					iV.setNumeroDeBanheiros(numB);//Numero de banheiros
-					iV.setTemGaragem(possuiGaragem);//Possui Garagem
-					iV.setContrato(contrato);//Contrato
-					iV.setOcupado(false);//Ocupado
-					iV.setPreco(preco);//Preço
-					iV.setAVenda(true);
-					iV.setProprietario(nome);
-					iV.salvar();
-					
 					repete = false;
 				}catch(InputMismatchException e){
 					System.out.println("Valor Invalido\n");
@@ -150,27 +137,14 @@ public class CadastroImovel {
 		String alugar = ler.nextLine();
 		
 		if(alugar.toUpperCase().equals("S")){
+			aLocacao=true;
+			
 			//Trata Excessão para valor de mensalidade informada incorretamente
 			System.out.println("Digite o valor da Mensalidade");
 			do{
 				try{
 					mensalidade = ler.nextDouble();
 					ler.nextLine();
-					
-					//Intancia Imovel Alugar e seta Valores 
-					ImovelAluguel iA = new ImovelAluguel();
-					iA.setEndereco(end);
-					iA.setArea(area);
-					iA.setTipo(tipo);
-					iA.setNumeroDeQuartos(numQ);
-					iA.setNumeroDeBanheiros(numB);
-					iA.setTemGaragem(possuiGaragem);
-					iA.setContrato(contrato);
-					iA.setOcupado(false);
-					iA.setMensalidade(mensalidade);
-					iA.setALocacao(true);
-					iA.setProprietario(nome);
-					iA.salvar();
 											
 					repete = false;
 				}catch(InputMismatchException e){
@@ -180,5 +154,21 @@ public class CadastroImovel {
 				}
 			}while(repete == true);
 		}
+		
+		//Intancia Imovel Alugar e seta Valores 
+		Imovel imovel = new Imovel();
+		imovel.setEndereco(end);
+		imovel.setArea(area);
+		imovel.setTipo(tipo);
+		imovel.setNumeroDeQuartos(numQ);
+		imovel.setNumeroDeBanheiros(numB);
+		imovel.setTemGaragem(possuiGaragem);
+		imovel.setContrato(contrato);
+		imovel.setOcupado(false);
+		imovel.setMensalidade(mensalidade);
+		imovel.setALocacao(aLocacao);
+		imovel.setAVenda(aVenda);
+		imovel.setProprietario(nome);
+		imovel.salvar();
 	}
 }

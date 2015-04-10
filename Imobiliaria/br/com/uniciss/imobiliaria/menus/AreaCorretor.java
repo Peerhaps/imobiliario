@@ -5,8 +5,6 @@ import java.util.Scanner;
 import br.com.uniciss.imobiliaria.geral.Cliente;
 import br.com.uniciss.imobiliaria.geral.Corretor;
 import br.com.uniciss.imobiliaria.geral.Imovel;
-import br.com.uniciss.imobiliaria.geral.ImovelAluguel;
-import br.com.uniciss.imobiliaria.geral.ImovelVenda;
 
 public class AreaCorretor {  
 	public static void areaCorretor() throws Exception {
@@ -45,7 +43,7 @@ public class AreaCorretor {
 				break;
 			case "5"://diz que A venda nao tem no imoveis.txt mas tem
 				Cliente cliente = new Cliente();
-				ImovelVenda imovel = new ImovelVenda();
+				Imovel imovel = new Imovel();
 				
 				System.out.println("Informe o nome do cliente");
 				String nome = entrada.nextLine();
@@ -77,7 +75,7 @@ public class AreaCorretor {
 				break;	
 			case "6"://aLocação nao tem no imoveis.txt
 				Cliente locatorio = new Cliente();
-				ImovelAluguel imovelAluguel = new ImovelAluguel();
+				Imovel imovelAluguel = new Imovel();
 				
 				System.out.println("Informe o nome do cliente");
 				String nomeLocatorio = entrada.nextLine();
