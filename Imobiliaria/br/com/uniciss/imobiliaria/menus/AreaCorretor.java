@@ -2,27 +2,33 @@ package br.com.uniciss.imobiliaria.menus;
 
 import java.util.Scanner;
 
+import br.com.uniciss.imobiliaria.geral.Cliente;
 import br.com.uniciss.imobiliaria.geral.Corretor;
+import br.com.uniciss.imobiliaria.geral.Imovel;
+import br.com.uniciss.imobiliaria.geral.ImovelAluguel;
 import br.com.uniciss.imobiliaria.geral.ImovelVenda;
 
 public class AreaCorretor {  
 	public static void areaCorretor() throws Exception {
-		System.out.println("BEM VINDO A ÁREA DO CORRETOR");
-		System.out.println("\n ESCOLHA AS OPÇÕES:\n "
-				+ "1-Menu Cliente\n"
-				+ "2-Receber Mensalidade\n"
-				+ "3-Menu Imóveis\n"
-				+ "4-Agendar Visitas\n"
-				+ "5-Vender Imóvel\n"
-				+ "6-Alugar Imóvel\n"
-				+ "7-Sair");
+		
 		/**
 		 * Switch com as opcoes de menu;
 		 */
 		Scanner entrada = new Scanner(System.in);
-	
-		String option = entrada.nextLine();
+		String option;
+		
 		do{
+			System.out.println("\nÁREA DO CORRETOR\n");
+			System.out.println("ESCOLHA ENTRE AS OPÇÕES:\n"
+					+ "1-Menu Cliente\n"
+					+ "2-Receber Mensalidade\n"
+					+ "3-Menu Imóveis\n"
+					+ "4-Agendar Visitas\n"
+					+ "5-Vender Imóvel\n"
+					+ "6-Alugar Imóvel\n"
+					+ "7-Sair");
+			option = entrada.nextLine();
+			
 			switch (option) {
 			case "1":
 				MenuCadastrarCliente.main(null);
@@ -37,23 +43,73 @@ public class AreaCorretor {
 				MenuAgendar agenda = new MenuAgendar();
 				agenda.agendarVisita();
 				break;
-			case "5":
-				Corretor corretor = new Corretor();	
-				corretor.vender(null, null);
+			case "5"://diz que A venda nao tem no imoveis.txt mas tem
+				Cliente cliente = new Cliente();
+				ImovelVenda imovel = new ImovelVenda();
+				
+				System.out.println("Informe o nome do cliente");
+				String nome = entrada.nextLine();
+				
+				if (!cliente.existe("clientes.txt", nome)) {
+					System.out.println("Cliente Inexistente");
+					return;
+				}else{
+					cliente.setNome(nome);
+					
+					System.out.println("Informe o id do Imovel");
+					int id = entrada.nextInt();
+					entrada.nextLine();
+					
+					imovel.setKey(id);
+					
+					if(imovel.existe()){
+						if(Corretor.vender(imovel, cliente)){
+							System.out.println("Venda Concluida");
+							System.out.println("Comprador:"+nome);
+							System.out.println("Id Imovel vendido:"+id);
+						}
+					}else{
+						System.out.println("Imovel Inexistente");
+					}
+				}
 				break;	
-			case "6":
-			//	Corretor.vender(imovel, comprador);
+			case "6"://aLocação nao tem no imoveis.txt
+				Cliente locatorio = new Cliente();
+				ImovelAluguel imovelAluguel = new ImovelAluguel();
+				
+				System.out.println("Informe o nome do cliente");
+				String nomeLocatorio = entrada.nextLine();
+				
+				if (!locatorio.existe("clientes.txt", nomeLocatorio)){
+					System.out.println("Cliente Inexistente");
+					return;
+				}else{
+					locatorio.setNome(nomeLocatorio);
+					
+					System.out.println("Informe o id do Imovel");
+					int id = entrada.nextInt();
+					entrada.nextLine();
+					
+					imovelAluguel.setKey(id);
+					
+					if(imovelAluguel.existe()){
+						if(Corretor.alugar(locatorio, imovelAluguel)){
+							System.out.println("Imovel alugado com sucesso");
+							System.out.println("Locatario:"+nomeLocatorio);
+							System.out.println("Id Imovel alugado:"+id);
+						}
+					}else{
+						System.out.println("Imovel Inexistente");
+					}
+				}
 				break;
 			case "7":
-			//	Corretor.alugar(locatario, imovel);
 				break;
-			case "8":
-				
 			default:
 				System.out.println("OPÇÃO ERRADA!");
 				break;
 			}
-		}while(!option.equals("8"));
+		}while(!option.equals("7"));
 		
 	}
 }
