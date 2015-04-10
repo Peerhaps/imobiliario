@@ -10,42 +10,75 @@ public class CadastroCliente {
 	private static Scanner entrada2;
 
 	public static void main() throws Exception {
-
-		/*
-		 * Area para cadastro de clientes que podem ser: Locatário, Locador,
-		 * Proprietario ou Comprador..
-		 */
-
+		entrada = new Scanner(System.in);
 		Cliente cliente = new Cliente();
-		System.out.println("Determine o nome do Cliente: ");
-		entrada = new Scanner(System.in); 
-		cliente.setNome(entrada.nextLine());
+		String nome;
+		/**Nome da Pessoa com validação*/
+		do {
 
-		System.out.println("Determine o CPF do Cliente: ");
+			System.out.println("Determine o nome: ");
+			nome = entrada.nextLine();
+			cliente.setNome(nome);
 
-		entrada2 = new Scanner(System.in); 
+		} while (nome.equals(""));
 
-		String cpf = entrada2.nextLine();
+		System.out.println("Determine CPF: ");
+		/**
+		 * Preenchimento do cpf com validação
+		 */
+		String cpf = entrada.nextLine();
 		while (!ValidaCpf.valido(cpf)) {
 			System.out.println("CPF inválido, informe novamente: ");
-			cpf = entrada2.nextLine();
+			cpf = entrada.nextLine();
+			entrada.nextLine();
 		}
-
 		cliente.setCpf(cpf);
 
-		System.out.println("Determine o RG do Cliente: ");
-		cliente.setRg(entrada.nextInt());
+		boolean erro = false;
+		do {
+			try {
+				System.out.println("Determine o RG: ");
+				/**
+				 * Preenchimento do RG com validação para não digitar letras
+				 */
+				int rg = 0;
+				rg = entrada.nextInt();
+				entrada.nextLine();
+				cliente.setRg(rg);
+				erro = false;
 
-		System.out.println("Determine o Telefone do Cliente: ");
-		cliente.setTelefone(entrada2.nextLine());
+			} catch (Exception e) {
+				erro = true;
+				entrada.nextLine();
+			}
+		} while (erro);
 
-		System.out.println("Determine o Endereço do Cliente: ");
+		do {
+			try {
+				System.out.println("Determine o Telefone: ");
+				/**
+				 * Preenchimento do TELEFONE com validação para não digitar
+				 * letras
+				 */
+				int telefone = entrada.nextInt();
+				cliente.setTelefone(String.valueOf(telefone));
+
+				erro = false;
+
+			} catch (Exception e) {
+				erro = true;
+				entrada.nextLine();
+			}
+		} while (erro);
+
+		System.out.println("Determine o endereco: ");
 		cliente.setEndereco(entrada.nextLine());
+		entrada.nextLine();
 
 		System.out.println("Determine o numero da conta Bancaria: ");
 		cliente.setNumeroContaBancaria(entrada2.nextInt());
 
 		cliente.salvar();
-
+		return;
 	}
 }

@@ -15,6 +15,7 @@ public class CadastroCorretor {
 		entrada = new Scanner(System.in);
 		Corretor corretor = new Corretor();
 		String nome;
+		// Nome da Pessoa com validação
 		do {
 
 			System.out.println("Determine o nome: ");
@@ -22,11 +23,10 @@ public class CadastroCorretor {
 			corretor.setNome(nome);
 
 		} while (nome.equals(""));
-		// entrada.nextLine();
 
-		System.out.println("Determine CPF: ");
+		System.out.println("Determine CPF: "); // Preenchimento do cpf com
+												// validação
 		String cpf = entrada.nextLine();
-
 		while (!ValidaCpf.valido(cpf)) {
 			System.out.println("CPF inválido, informe novamente: ");
 			cpf = entrada.nextLine();
@@ -34,11 +34,12 @@ public class CadastroCorretor {
 		}
 		corretor.setCpf(cpf);
 
-		// System.out.println("Determine o RG: ");
 		boolean erro = false;
 		do {
 			try {
-				System.out.println("Determine o RG: ");
+				System.out.println("Determine o RG: "); // Preenchimento do RG
+														// com validação para
+														// não digitar letras
 				int rg = 0;
 				rg = entrada.nextInt();
 				entrada.nextLine();
@@ -53,7 +54,12 @@ public class CadastroCorretor {
 
 		do {
 			try {
-				System.out.println("Determine o Telefone: ");
+				System.out.println("Determine o Telefone: ");// Preenchimento do
+																// TELEFONE com
+																// validação
+																// para não
+																// digitar
+																// letras
 				int telefone = entrada.nextInt();
 				corretor.setTelefone(String.valueOf(telefone));
 
@@ -69,35 +75,54 @@ public class CadastroCorretor {
 		corretor.setEndereco(entrada.nextLine());
 		entrada.nextLine();
 
-		System.out.println("Determine a Hora de Entrada: ");
-		int validaHora = entrada.nextInt();
-		entrada.nextLine();
-		while ((validaHora > 24) || (validaHora < 0)) {
-			System.out.println("Inserte uma hora correta: ");
-			validaHora = entrada.nextInt();
-			entrada.nextLine();
-		}
-		corretor.setHoraDeEntrada(String.valueOf(validaHora));
+		int validaHora; // Variavel que vai servir de auxilio para validar a
+						// hora de entrada e saida do trabalho
+		do {
+			try {
+				System.out.println("Determine a Hora de Entrada: ");
+				validaHora = entrada.nextInt();
+				entrada.nextLine();
+				while ((validaHora > 24) || (validaHora < 0)) {
+					System.out.println("Inserte uma hora correta: ");
+					validaHora = entrada.nextInt();
+				}
+				corretor.setHoraDeEntrada(String.valueOf(validaHora));
+				erro = false;
 
-		System.out.println("Determine a Hora de Saída: ");
-		int validaHora2 = entrada.nextInt();
-		entrada.nextLine();
-		while ((validaHora2 > 24) || (validaHora2 < 0)) {
-			System.out.println("Inserte uma hora correta: ");
-			validaHora2 = entrada.nextInt();
-			entrada.nextLine();
-		}
-		corretor.setHoraDeSaida(String.valueOf(validaHora));
+			} catch (Exception e) {
+				erro = true;
+				entrada.nextLine();
+			}
+		} while (erro);
 
-		String senha;
+		do {
+			try {
+				System.out.println("Determine a Hora de Saida: ");
+				validaHora = entrada.nextInt();
+				entrada.nextLine();
+				while ((validaHora > 24) || (validaHora < 0)) {
+					System.out.println("Inserte uma hora correta: ");
+					validaHora = entrada.nextInt();
+				}
+				corretor.setHoraDeSaida(String.valueOf(validaHora));
+
+				erro = false;
+
+			} catch (Exception e) {
+				erro = true;
+				entrada.nextLine();
+			}
+		} while (erro);
+
+		String senha; // Variavel auxiliar para senhas
 		do {
 			System.out.println("Determine a Senha do Corretor: ");
 			senha = entrada.nextLine();
 			corretor.setSenha(senha);
-			corretor.salvar(); 
 
 		} while (senha.equals(""));
 		corretor.salvar();
+		return;
 	}
 
 }
