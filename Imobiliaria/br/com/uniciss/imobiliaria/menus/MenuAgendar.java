@@ -1,37 +1,46 @@
 package br.com.uniciss.imobiliaria.menus;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MenuAgendar {
-public void agendarVisita(){
+private Scanner entrada;
+
+public void agendarVisita() throws IOException{
 	System.out.println("Agenda de Visitas\n"
 			+ "1 - Agendar\n"
-			+ "2 - Editar Agenda\n"
-			+ "3 - Excluir\n");
+			+ "2 - Excluir\n"
+			+ "3 - Sair\n");
 	String opcao;
+	CadastroVisita visita = new CadastroVisita();
 	do{
 		
-		Scanner entrada = new Scanner(System.in);
+		entrada = new Scanner(System.in);
 		opcao=entrada.nextLine();
 		System.out.println("");
 		switch (opcao) {
 		case "1":
 			System.out.println("Agendar");
+			
+			visita.cadastrarVisita();
 			break;
 
 		case "2":
-			System.out.println("Editar agenda");
+			System.out.println("Excluir agendamento");
+			
 			break;
 		case "3":
-			System.out.println("Excluir agendamento");
-			break;
-		case "4":
 			System.out.println("Sair");
+			return;
 		default:
 			System.out.println("Digite a opção correta");
 			break;
 		}
-		
-	}while(!(opcao=="4"));
+		System.out.println("Agenda de Visitas\n"
+				+ "1 - Agendar\n"
+				+ "2 - Excluir\n"
+				+ "3 - Sair\n");
+		opcao=entrada.nextLine();
+	}while(!(opcao=="3"));
 }
 }
