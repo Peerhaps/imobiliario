@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import br.com.uniciss.imobiliaria.util.IO;
@@ -145,20 +146,23 @@ public class Imovel extends Dado {
 	public boolean agendarVisita(String nomeCliente, int dia, int mes, int ano) {
 		String data = dia + "/" + mes + "/" + ano;
 
-		if (this.dados.getJSONObject("Visitas agendadas").has(data)) {
-			return false;
+		try {
+			if (this.dados.getJSONObject("Visitas agendadas").has(data)) {
+				return false;
+			}
+		} catch (JSONException e) {
 		}
 
 		this.dados.accumulate("Visitas agendadas", data);
 
 		return true;
 	}
-	
+
 	public boolean desmarcarVisita(int dia, int mes, int ano) {
 		String data = dia + "/" + mes + "/" + ano;
-	
+
 		return this.dados.getJSONObject("Visitas agendadas").remove(data) != null;
-		
+
 	}
 
 	public boolean aVenda() {
