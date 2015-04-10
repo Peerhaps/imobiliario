@@ -79,9 +79,19 @@ public class CadastroCliente {
 		cliente.setEndereco(endereco);
 
 		System.out.println("Determine o numero da conta Bancaria: ");
-		String bancario = entrada.nextLine();
-		entrada.nextLine();
-		cliente.setNumeroContaBancaria(Integer.parseInt(bancario));
+		do {
+			try {
+				cliente.setNumeroContaBancaria(entrada.nextInt());
+
+				erro = false;
+
+			} catch (Exception e) {
+				System.out.println("Informe apenas numeros");
+				erro = true;
+				entrada.nextLine();
+			}
+		} while (erro);
+		
 
 		cliente.salvar();
 		return;

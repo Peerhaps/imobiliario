@@ -41,7 +41,7 @@ public class AreaCorretor {
 				MenuAgendar agenda = new MenuAgendar();
 				agenda.agendarVisita();
 				break;
-			case "5"://diz que A venda nao tem no imoveis.txt mas tem
+			case "5":
 				Cliente cliente = new Cliente();
 				Imovel imovel = new Imovel();
 				
@@ -61,19 +61,23 @@ public class AreaCorretor {
 					imovel.setKey(id);
 					
 					if(imovel.existe()){
-						if(Corretor.vender(imovel, cliente)){
-							System.out.println("Venda Concluida");
-							System.out.println("Comprador:"+nome);
-							System.out.println("Id Imovel vendido:"+id);
+						if(!imovel.getProprietario().equals(nome)){	
+							if(Corretor.vender(imovel, cliente)){
+									System.out.println("Venda Concluida");
+									System.out.println("Comprador:"+nome);
+									System.out.println("Id Imovel vendido:"+id);
+							}else{
+								System.out.println("Imovel não esta a venda");
+							}
 						}else{
-							System.out.println("Imovel não esta a venda");
+							System.out.println("O comprador é o propio Propietario, não foi possivel efetuar a venda");
 						}
 					}else{
 						System.out.println("Imovel Inexistente");
 					}
 				}
 				break;	
-			case "6"://aLocação nao tem no imoveis.txt
+			case "6":
 				Cliente locatorio = new Cliente();
 				Imovel imovelAluguel = new Imovel();
 				
