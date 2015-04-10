@@ -48,6 +48,8 @@ public class Programa {
 				} else {
 					System.out.println("Login ou senha incorretos");
 				}
+			} else {
+				System.out.println("Login ou senha incorretos");
 			}
 
 		} while (!logado);
