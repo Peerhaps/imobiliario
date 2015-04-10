@@ -21,17 +21,18 @@ private static Scanner entrada;
 			switch (opcao){
 			case "1":
 				System.out.println("Cadastrar novo Corretor");
+				CadastroCorretor.main(null);
 				
 			break;
 			
 			case "2":
 				System.out.println("Cadastrar Secretario");
-				
+				CadastroSecretario.main(null);
 			break;
 			
 			case "3":
 				System.out.println("Sair");
-		
+		return;
 				
 			default:
 				System.out.println("Informaste o valor errado!");
