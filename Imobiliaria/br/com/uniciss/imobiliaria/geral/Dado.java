@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import br.com.uniciss.imobiliaria.util.IO;
@@ -77,9 +78,9 @@ public abstract class Dado {
 
 	public boolean excluir() {
 		try {
-			if(!existe(getArquivo(), getKey()))
+			if (!existe(getArquivo(), getKey()))
 				throw new RegistroInexistente();
-			
+
 			JSONObject contas = getDadosConteudo(this.getArquivo());
 			contas.remove(this.getKey());
 			IO.setConteudoDoArquivo(getArquivo(), contas.toString());
@@ -94,6 +95,15 @@ public abstract class Dado {
 			throws IOException {
 		String contas = IO.getConteudoDoArquivo(arquivo);
 		return new JSONObject(contas);
+	}
+
+	public boolean carregar() {
+		try {
+			this.dados = getDadosConteudo(getArquivo()).getJSONObject(getKey());
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 }

@@ -57,5 +57,10 @@ public class Secretario extends Autenticavel {
 	public String getFuncao() {
 		return "secretario";
 	}
+	
+	public boolean salvar() {
+		this.dados.put("Função", this.getFuncao());
+		return super.salvar();
+	}
 
 }

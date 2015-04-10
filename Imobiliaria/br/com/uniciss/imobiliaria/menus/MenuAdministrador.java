@@ -3,10 +3,12 @@ package br.com.uniciss.imobiliaria.menus;
 import java.io.IOException;
 import java.util.Scanner;
 
+import br.com.uniciss.imobiliaria.Programa;
+
 public class MenuAdministrador {
 private static Scanner entrada;
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {
 		System.out.println("Menu Administrador:\n" + "1 - Cadastrar Corretor\n"
 				+ "2 - Cadastrar Secretario\n" + 
 				"3 - Sair ");
@@ -33,7 +35,8 @@ private static Scanner entrada;
 			
 			case "3":
 				System.out.println("Sair");
-		return;
+				System.out.println();
+				Programa.main(null);
 				
 			default:
 				System.out.println("Informaste o valor errado!");

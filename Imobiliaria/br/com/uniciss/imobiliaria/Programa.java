@@ -1,8 +1,8 @@
 package br.com.uniciss.imobiliaria;
 
-
 import java.util.Scanner;
 
+import br.com.uniciss.imobiliaria.geral.Funcionario;
 import br.com.uniciss.imobiliaria.menus.AreaCorretor;
 import br.com.uniciss.imobiliaria.menus.AreaSecretario;
 import br.com.uniciss.imobiliaria.menus.MenuAdministrador;
@@ -10,40 +10,48 @@ import br.com.uniciss.imobiliaria.menus.MenuAdministrador;
 public class Programa {
 	private static Scanner entrada;
 
-	//Menu Geral Programa
+	// Menu Geral Programa
 	public static void main(String[] args) throws Exception {
-		System.out.println("BEM VINDO AO IMOBILIARIA SOFTWARE");
-		System.out.println("\n ESCOLHA AS OPÇÕES:\n"
-				+ "1-MENU SECRETARIO\n"
-				+ "2-MENU CORRETOR\n"
-				+ "3-MENU ADMINISTRADOR\n"
-				+ "4-SAIR");
+
 		entrada = new Scanner(System.in);
-	
-		String option = entrada.nextLine();
-		do{
-			switch (option) {
-			case "1":
-				AreaSecretario.areaSecretario();
-				break;
-			case "2":
-				AreaCorretor.areaCorretor();
-				break;
-			case "3":
-				MenuAdministrador.main(null);
-				break;
-			case "4":
-				break;
-			default:
-				System.out.println("OPÇÃO ERRADA!");
-				break;
+		boolean logado = false;
+
+		do {
+			System.out.println("Nome: ");
+			String nome = entrada.nextLine();
+
+			System.out.println("Senha: ");
+			String senha = entrada.nextLine();
+
+			Funcionario funcionario = new Funcionario();
+			funcionario.setNome(nome);
+
+			if (Funcionario.existe("funcionarios.txt", nome)) {
+				funcionario.carregar();
+				if (funcionario.getSenha().equals(senha)) {
+					logado = true;
+
+					switch (funcionario.getFuncao()) {
+					case "admin":
+						MenuAdministrador.main(null);
+						break;
+					case "corretor":
+						AreaCorretor.areaCorretor();
+						break;
+					case "secretario":
+						AreaSecretario.areaSecretario();
+						break;
+					default:
+						break;
+					}
+
+				} else {
+					System.out.println("Login ou senha incorretos");
+				}
 			}
-			
-			
-			
-			
-		}while(!option.equals("4"));
-		
+
+		} while (!logado);
+
 	}
 
 }
