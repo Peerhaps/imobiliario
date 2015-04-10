@@ -12,8 +12,8 @@ public class Corretor extends Secretario {
 		imovel.setALocacao(false);
 		imovel.setOcupado(false);
 		imovel.setLocatario(locatario.getNome());
-		
-		return true;
+				
+		return imovel.salvar();
 	}
 
 	@Override
