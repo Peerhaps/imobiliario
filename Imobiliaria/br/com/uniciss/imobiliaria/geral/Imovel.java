@@ -145,6 +145,10 @@ public class Imovel extends Dado {
 	public void setVisitasAgendadas(JSONArray visitasAgendadas) {
 		this.dados.put("Venda e aluguel", visitasAgendadas);
 	}
+	
+	public boolean agendarVisita(Cliente cliente, int dia, int mes, int ano) {
+		return true;
+	}
 
 	public boolean aVenda() {
 		return this.dados.getBoolean("A venda");
