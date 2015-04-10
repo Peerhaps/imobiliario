@@ -197,8 +197,9 @@ public class Imovel extends Dado {
 	
 	public boolean existe(){
 		try {
-			return getDadosConteudo(getArquivo()).has(getKey());
-		} catch (IOException e) {
+			this.dados = getDadosConteudo(getArquivo()).getJSONObject(getKey());
+			return true;
+		} catch (Exception e) {
 			return false;
 		}
 	}
