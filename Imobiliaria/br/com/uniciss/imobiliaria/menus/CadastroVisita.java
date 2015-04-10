@@ -79,7 +79,13 @@ public class CadastroVisita {
 		System.out.println("Determine o nome do Cliente: ");
 		String cliente = entrada.nextLine();
 		
+		entrada.nextLine();
+		System.out.println("Id do imóvel: ");
+		imovel.setKey(entrada.nextInt());
+		entrada.nextLine();
+		
 		String nome= cliente;
+		
 		if (Cliente.existe("clientes.txt", nome)&&(imovel.existe())) {
 			if(imovel.agendarVisita(cliente, dia, mes, ano)){
 				imovel.salvar();
@@ -93,5 +99,25 @@ public class CadastroVisita {
 			System.out.println("Cliente ou imovel inexistente!!");
 		}
 
+	}
+	
+	public void excluirVisita() {
+		entrada = new Scanner(System.in);
+		
+		Imovel imovel = new Imovel();
+
+		System.out.println("Determine o mês: ");
+		int mes = entrada.nextInt();
+		entrada.nextLine();
+		
+		System.out.println("Determine o dia: ");
+		int dia = entrada.nextInt();
+		entrada.nextLine();
+		
+		System.out.println("Determine o ano: ");
+		int ano = entrada.nextInt();
+		entrada.nextLine();
+		
+		imovel.desmarcarVisita(dia, mes, ano);
 	}
 }

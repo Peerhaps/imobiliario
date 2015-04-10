@@ -27,7 +27,7 @@ public void agendarVisita() throws IOException{
 
 		case "2":
 			System.out.println("Excluir agendamento");
-			
+			visita.excluirVisita();
 			break;
 		case "3":
 			System.out.println("Sair");

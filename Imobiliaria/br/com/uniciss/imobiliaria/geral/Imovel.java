@@ -160,8 +160,11 @@ public class Imovel extends Dado {
 
 	public boolean desmarcarVisita(int dia, int mes, int ano) {
 		String data = dia + "/" + mes + "/" + ano;
-
-		return this.dados.getJSONObject("Visitas agendadas").remove(data) != null;
+		try {
+			return this.dados.getJSONObject("Visitas agendadas").remove(data) != null;
+		} catch (Exception e) {
+			return false;
+		}
 
 	}
 
