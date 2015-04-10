@@ -147,7 +147,7 @@ public class Imovel extends Dado {
 	}
 	
 	public boolean agendarVisita(String nomeCliente, int dia, int mes, int ano) {
-		//this.dados.getJSONArray("Visitas agendadas").p
+		//this.dados.ge("Visitas agendadas").j
 		
 		return true;
 	}
