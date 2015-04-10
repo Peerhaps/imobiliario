@@ -11,8 +11,6 @@ public class EditarCliente {
 	 * Classe para editar clientes 
 	 */
 	private static Scanner entrada;
-	private static Scanner entrada2;
-
 	/**
 	 * Metodo editarCliente, feito para editar clientes pelo nome 
 	 * @throws IOException
@@ -30,32 +28,67 @@ public class EditarCliente {
 			return;
 		}
 		
-		System.out.println("Determine o CPF do Cliente: ");
-
-		entrada2 = new Scanner(System.in);
-
-		String cpf = entrada2.nextLine();
+		System.out.println("Determine CPF: ");
+		/**
+		 * Preenchimento do cpf com validação
+		 */
+		String cpf = entrada.nextLine();
 		while (!ValidaCpf.valido(cpf)) {
 			System.out.println("CPF inválido, informe novamente: ");
-			cpf = entrada2.nextLine();
+			cpf = entrada.nextLine();
+			entrada.nextLine();
 		}
-
 		cliente.setCpf(cpf);
 
-		System.out.println("Determine o RG do Cliente: ");
-		cliente.setRg(entrada.nextInt()); 
+		boolean erro = false;
+		do {
+			try {
+				System.out.println("Determine o RG: ");
+				/**
+				 * Preenchimento do RG com validação para não digitar letras
+				 */
+				int rg = 0;
+				rg = entrada.nextInt();
+				entrada.nextLine();
+				cliente.setRg(rg);
+				erro = false;
 
-		System.out.println("Determine o Telefone do Cliente: ");
-		cliente.setTelefone(entrada2.nextLine());
+			} catch (Exception e) {
+				erro = true;
+				entrada.nextLine();
+			}
+		} while (erro);
 
-		System.out.println("Determine o Endereço do Cliente: ");
+		do {
+			try {
+				System.out.println("Determine o Telefone: ");
+				/**
+				 * Preenchimento do TELEFONE com validação para não digitar
+				 * letras
+				 */
+				int telefone = entrada.nextInt();
+				cliente.setTelefone(String.valueOf(telefone));
+
+				erro = false;
+
+			} catch (Exception e) {
+				erro = true;
+				entrada.nextLine();
+			}
+		} while (erro);
+
+		System.out.println("Determine o endereco: ");
 		cliente.setEndereco(entrada.nextLine());
+		entrada.nextLine();
 
 		System.out.println("Determine o numero da conta Bancaria: ");
-		cliente.setNumeroContaBancaria(entrada2.nextInt());
+		String bancario = entrada.nextLine();
+		entrada.nextLine();
+		cliente.setNumeroContaBancaria(Integer.parseInt(bancario));
+
 
 		cliente.salvar();
-
+		return;
 	}
 	
 	

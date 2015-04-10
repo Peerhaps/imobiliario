@@ -2,6 +2,8 @@ package br.com.uniciss.imobiliaria.menus;
 
 import java.util.Scanner;
 
+import com.sun.xml.internal.bind.v2.runtime.RuntimeUtil.ToStringAdapter;
+
 import br.com.uniciss.imobiliaria.geral.Cliente;
 import br.com.uniciss.imobiliaria.util.ValidaCpf;
 
@@ -76,7 +78,9 @@ public class CadastroCliente {
 		entrada.nextLine();
 
 		System.out.println("Determine o numero da conta Bancaria: ");
-		cliente.setNumeroContaBancaria(entrada2.nextInt());
+		String bancario = entrada.nextLine();
+		entrada.nextLine();
+		cliente.setNumeroContaBancaria(Integer.parseInt(bancario));
 
 		cliente.salvar();
 		return;
