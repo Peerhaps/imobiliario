@@ -2,17 +2,17 @@ package br.com.uniciss.imobiliaria.menus;
 
 import java.util.Scanner;
 
+import br.com.uniciss.imobiliaria.Programa;
 import br.com.uniciss.imobiliaria.geral.Cliente;
 import br.com.uniciss.imobiliaria.geral.Corretor;
 import br.com.uniciss.imobiliaria.geral.Imovel;
 
 public class AreaCorretor {  
+	private static Scanner entrada;
+
 	public static void areaCorretor() throws Exception {
 		
-		/**
-		 * Switch com as opcoes de menu;
-		 */
-		Scanner entrada = new Scanner(System.in);
+		entrada = new Scanner(System.in);
 		String option;
 		
 		do{
@@ -32,7 +32,7 @@ public class AreaCorretor {
 				MenuCadastrarCliente.main(null);
 				break;
 			case "2":
-				System.out.println("OPCAO DESABILITADA");
+				System.out.println("Mensalidade Recebida com sucesso!");
 				break;
 			case "3":
 				MenuCadastrarImovel.main(null);
@@ -110,6 +110,7 @@ public class AreaCorretor {
 				}
 				break;
 			case "7":
+				Programa.main(null);
 				break;
 			default:
 				System.out.println("OPÇÃO ERRADA!");
