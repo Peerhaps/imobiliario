@@ -60,7 +60,7 @@ public class MenuCadastrarCorretor {
 					break;
 				
 				}
-			//	opcao="0";
+			
 				System.out.println("Menu Cadastro de Corretor:\n" + "1 - Cadastrar\n"
 						+ "2 - Listar\n" + "3 - Alterar\n" + "4 - Excluir\n"
 						+ "5 - Voltar ao menu anterior  ");
