@@ -1,11 +1,11 @@
 package br.com.uniciss.imobiliaria.geral;
 
 public class Corretor extends Secretario {
-	public static boolean vender(ImovelVenda imovel, Cliente comprador) {
+	public static boolean vender(Imovel imovel, Cliente comprador) {
 		return imovel.aVenda() && imovel.excluir();
 	}
 
-	public static boolean alugar(Cliente locatario, ImovelAluguel imovel) {
+	public static boolean alugar(Cliente locatario, Imovel imovel) {
 		if(!imovel.aLocacao())
 			return false;
 		

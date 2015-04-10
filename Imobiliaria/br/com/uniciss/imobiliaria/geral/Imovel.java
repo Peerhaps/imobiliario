@@ -147,7 +147,7 @@ public class Imovel extends Dado {
 	}
 	
 	public boolean agendarVisita(String nomeCliente, int dia, int mes, int ano) {
-		
+		//this.dados.getJSONArray("Visitas agendadas").p
 		
 		return true;
 	}
@@ -208,6 +208,38 @@ public class Imovel extends Dado {
 		} catch (Exception e) {
 			return false;
 		}
+	}
+	
+	public String getLocatario() {
+		return this.dados.getString("Locatário");
+	}
+	
+	public void setLocatario(String nomeLocatario) {
+		this.dados.put("Locatário", nomeLocatario);
+	}
+	
+	public double getMensalidade() {
+		return this.dados.getDouble("Mensalidade");
+	}
+
+	public void setMensalidade(double mensalidade) {
+		this.dados.put("Mensalidade", mensalidade);
+	}
+
+	public String getFimContrato() {
+		return this.dados.getString("Fim do contrato");
+	}
+
+	public void setFimContrato(String fimContrato) {
+		this.dados.put("Fim do contrato", fimContrato);
+	}
+	
+	public double getPreco() {
+		return this.dados.getDouble("Preço");
+	}
+
+	public void setPreco(double preco) {
+		this.dados.put("Preço", preco);
 	}
 
 }
