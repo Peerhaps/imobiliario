@@ -67,6 +67,8 @@ public class AreaCorretor {
 							System.out.println("Venda Concluida");
 							System.out.println("Comprador:"+nome);
 							System.out.println("Id Imovel vendido:"+id);
+						}else{
+							System.out.println("Imovel não esta a venda");
 						}
 					}else{
 						System.out.println("Imovel Inexistente");
@@ -97,6 +99,8 @@ public class AreaCorretor {
 							System.out.println("Imovel alugado com sucesso");
 							System.out.println("Locatario:"+nomeLocatorio);
 							System.out.println("Id Imovel alugado:"+id);
+						}else{
+							System.out.println("Imovel não esta para alugar");
 						}
 					}else{
 						System.out.println("Imovel Inexistente");
