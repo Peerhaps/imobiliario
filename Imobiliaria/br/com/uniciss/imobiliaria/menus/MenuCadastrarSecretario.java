@@ -1,6 +1,5 @@
 package br.com.uniciss.imobiliaria.menus;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 import br.com.uniciss.imobiliaria.Programa;
